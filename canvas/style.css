@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent; 
+}
+
+body{
+  overflow: hidden;
+}
+
+#canvas{
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-tap-highlight-color: transparent; 
+}
+
+
+#brush{
+  background-color: #c7c7c7;
+  border-radius: 8px;
+  width: 50px;
+  height: 35px;
+}
+#eraser{
+  background-color: #adadad;
+  border-radius: 8px;
+  width: 50px;
+  height: 35px;
+}
+
