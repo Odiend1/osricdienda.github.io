@@ -1,0 +1,51 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000075;
+}
+
+
+h1{
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: white;
+}
+h3{
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+button{
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  border-radius: 8px;
+}
+
+#qr{
+  border-radius: 8px;
+  /*border: 8px solid #000000;*/
+  width: 200px;
+  height: 200px;
+  z-index: 0;
+}
+
+#border{
+  border: 16px solid navy;
+  height: 200px;
+  width: 200px;
+  background-color: navy;
+  border-radius: 8px;
+}
+
+#text{
+  border-radius: 8px;
+  width: 400px;
+  height: 30px;
+  font-size: 16px;
+}
+
+#encode{
+  border-radius: 8px;
+  width: 90px;
+  height: 30px;
+  font-size: 16px;
+}

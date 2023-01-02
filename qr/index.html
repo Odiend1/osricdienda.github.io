@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Osmosis QR</title>
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+
+  <center>
+    <h1>Osmosis QR</h1>
+
+      <br>
+        <input type="text" id="text" placeholder="Enter text to encode.">
+        <button id="encode">Encode</button>
+<br>
+      <br>
+      <br>
+      <h3>Your QR code will appear here:</h3>
+      <div id="border">
+    <div id="qr"></div>
+    </div>
+    </center>
+  <p id="qr?" hidden>0</p>
+  <script>
+  function updateQr() {
+    if(document.getElementById("qr?").value === "1") if(!confirm("By creating a new code, your existing one will be overwritten. Would you like to proceed anyways?")) return;
+    else{
+      document.getElementById("qr").remove();
+      let q = document.createElement("div");
+      q.id = "qr";
+      document.getElementById("border").appendChild(q);
+    }
+    var text = document.getElementById("text").value;
+    if(text !== ""){
+    var qrc = new QRCode(document.getElementById("qr"), {
+      text: text,
+      width: 200,
+      height: 200
+    });
+    document.getElementById("qr?").value = "1";
+    }
+    else{
+      alert("Please enter something to encode!")
+    }
+  }
+  document.getElementById("encode").addEventListener("click", updateQr);
+</script>
+</body>
+
+</html>
