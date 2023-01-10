@@ -173,7 +173,10 @@ function update(){
     setTimeout(function(){document.body.style.filter = "blur(16px)"}, 1000);
     setTimeout(function(){document.body.style.filter = "blur(24px)"}, 1250);
     setTimeout(function(){document.body.style.filter = "blur(32px)"}, 1500);
-    setTimeout(function(){alert("Game over!")}, 1750);
+    setTimeout(function(){
+      alert("Game over!")
+      window.location.href = "https://osricdienda.com"
+    }, 1750);
     gameover = true;
   }
   
