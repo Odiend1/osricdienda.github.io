@@ -49,7 +49,7 @@ document.onkeydown = function (e) {
     }
   if(e.key == 'a'){
       if(codeNum == 9){
-        window.location.href = "https://osricdienda.com/blockbreaker"
+        window.location.href = window.location.href + "blockbreaker"
       }
     else{
       codeNum = 0;

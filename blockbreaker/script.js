@@ -175,7 +175,7 @@ function update(){
     setTimeout(function(){document.body.style.filter = "blur(32px)"}, 1500);
     setTimeout(function(){
       alert("Game over!")
-      window.location.href = "https://osricdienda.com"
+      window.location.href = "https://" + window.location.href.split("/")[2]
     }, 1750);
     gameover = true;
   }
