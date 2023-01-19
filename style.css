@@ -62,3 +62,8 @@ h1, h2, h3, h4, h5, h6, p{
 #about{
   background-color: #393939;
 }
+
+#abouttext{
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+}
