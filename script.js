@@ -5,6 +5,12 @@ if(window.innerWidth < 700){
   menu.hidden = true;
 }
 
+var planet = document.getElementById('planet');
+
+planet.onclick = function(){
+  window.location.href = "./blog/planets/J1407b/";
+}
+
 document.onkeydown = function (e) {
     e = e || window.event;
   if(e.key == 'ArrowUp'){
