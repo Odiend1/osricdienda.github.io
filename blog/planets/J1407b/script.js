@@ -1,12 +1,11 @@
 var menu = document.getElementById('menu');
 var codeNum = 0;
 
+var p = document.getElementById('p');
+
 if(window.innerWidth < 700){
   menu.hidden = true;
 }
-
-var planet = document.getElementById('planet');
-
-planet.onclick = function(){
-  window.location.href = "./blog/planets/J1407b/";
+else{
+  p.style.paddingLeft = "150px";
 }
