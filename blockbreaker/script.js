@@ -165,7 +165,7 @@ function update(){
   }
 
   // Gameover
-  if(y >= window.innerHeight - 9 && !won) {
+  if(y >= window.innerHeight - 15 && !won) {
     //Blur effect
     setTimeout(function(){document.body.style.filter = "blur(2px)"}, 250);
     setTimeout(function(){document.body.style.filter = "blur(4px)"}, 500);
