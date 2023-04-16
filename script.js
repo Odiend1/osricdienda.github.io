@@ -11,6 +11,14 @@ planet.onclick = function(){
   window.location.href = "./blog/planets/J1407b/";
 }
 
+var ssp = document.getElementById('superscript+');
+ssp.style.width = planet.offsetWidth + "px";
+ssp.style.height = planet.offHeight + "px";
+
+ssp.onclick = function(){
+  window.location.href = "./superscript+/";
+}
+
 document.onkeydown = function (e) {
     e = e || window.event;
   if(e.key == 'ArrowUp'){

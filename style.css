@@ -120,3 +120,11 @@ button{
   padding-bottom: 12px;
   display: inline-block;
 }
+
+.container{
+  border: 1px solid white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: inline-block;
+  height: auto;
+}
