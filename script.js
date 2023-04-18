@@ -12,11 +12,14 @@ planet.onclick = function(){
 }
 
 var ssp = document.getElementById('superscript+');
-ssp.style.width = planet.offsetWidth + "px";
-ssp.style.height = planet.offHeight + "px";
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  ssp.style.width = planet.offsetWidth + "px";
+  ssp.style.height = planet.offHeight + "px";
+});
 
 ssp.onclick = function(){
-  window.location.href = "./superscript+/";
+    window.location.href = "./superscript+/";
 }
 
 document.onkeydown = function (e) {
