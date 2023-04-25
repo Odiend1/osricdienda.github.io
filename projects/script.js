@@ -12,71 +12,35 @@ planet.onclick = function(){
 }
 
 var ssp = document.getElementById('superscript+');
-ssp.style.width = planet.offsetWidth + "px";
-ssp.style.height = planet.offHeight + "px";
-
 ssp.onclick = function(){
   window.location.href = "/superscript+/";
 }
 
 var osmosis = document.getElementById('osmosis');
-osmosis.style.width = planet.offsetWidth + "px";
-osmosis.style.height = planet.offHeight + "px";
-
 osmosis.onclick = function(){
   window.location.href = "./osmosis/"
 }
 
+function resizeContainers(){
+  ssp.style.width = planet.offsetWidth - 1 + "px";
+  ssp.style.height = planet.offHeight - 1 + "px";
+  osmosis.style.width = planet.offsetWidth - 1 + "px";
+  osmosis.style.height = planet.offHeight - 1 + "px";
+}
+
+resizeContainers();
+
+addEventListener("DOMContentLoaded", function(event) {
+  resizeContainers();
+});
+
+addEventListener("load", (event) => {
+  resizeContainers();
+});
+
+addEventListener("resize", (event) => {
+  resizeContainers();
+});
+
 planet.remove();
 
-document.onkeydown = function (e) {
-    e = e || window.event;
-  if(e.key == 'ArrowUp'){
-      if(codeNum == 0 || codeNum == 1){
-        codeNum++;
-      }
-    else{
-      codeNum = 0;
-    }
-    }
-  if(e.key == 'ArrowDown'){
-     if(codeNum == 2 || codeNum == 3){
-        codeNum++;
-      }
-    else{
-      codeNum = 0;
-    }
-    }
-    if(e.key == 'ArrowLeft'){
-      if(codeNum == 4 || codeNum == 6){
-        codeNum++;
-      }
-    else{
-      codeNum = 0;
-    }
-    }
-  if(e.key == 'ArrowRight'){
-      if(codeNum == 5 || codeNum == 7){
-        codeNum++;
-      }
-    else{
-      codeNum = 0;
-    }
-  }
-  if(e.key == 'b'){
-      if(codeNum == 8){
-        codeNum++;
-      }
-    else{
-      codeNum = 0;
-    }
-    }
-  if(e.key == 'a'){
-      if(codeNum == 9){
-        window.location.href = window.location.href + "blockbreaker"
-      }
-    else{
-      codeNum = 0;
-    }
-  }
-};

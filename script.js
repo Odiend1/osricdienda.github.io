@@ -4,6 +4,9 @@ var codeNum = 0;
 if(window.innerWidth < 700){
   menu.hidden = true;
 }
+else{
+  menu.hidden = false;
+}
 
 var planet = document.getElementById('planet');
 
@@ -11,11 +14,30 @@ planet.onclick = function(){
   window.location.href = "./blog/planets/J1407b/";
 }
 
-var ssp = document.getElementById('superscript+');
+function resizeContainers(){
+  ssp.style.width = planet.offsetWidth - 1 + "px";
+  ssp.style.height = planet.offHeight - 1 + "px";
+}
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  ssp.style.width = planet.offsetWidth + "px";
-  ssp.style.height = planet.offHeight + "px";
+var ssp = document.getElementById('superscript+');
+resizeContainers();
+
+addEventListener("DOMContentLoaded", function(event) {
+  resizeContainers();
+});
+
+addEventListener("load", (event) => {
+  resizeContainers();
+});
+
+addEventListener("resize", (event) => {
+  resizeContainers();
+  if(window.innerWidth < 700){
+    menu.hidden = true;
+  }
+  else{
+    menu.hidden = false;
+  }  
 });
 
 ssp.onclick = function(){
