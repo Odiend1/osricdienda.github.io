@@ -15,8 +15,8 @@ planet.onclick = function(){
 }
 
 function resizeContainers(){
-  ssp.style.width = planet.offsetWidth - 1 + "px";
-  ssp.style.height = planet.offHeight - 1 + "px";
+  ssp.style.width = planet.offsetWidth - 2 + "px";
+  ssp.style.height = planet.offHeight - 2 + "px";
 }
 
 var ssp = document.getElementById('superscript+');
