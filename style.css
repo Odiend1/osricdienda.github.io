@@ -128,3 +128,21 @@ button{
   display: inline-block;
   height: auto;
 }
+
+.game{
+  border-radius: 8px;
+  background-color: #fefefe;
+  width: 500px;
+  height: 60px;
+  padding: 1%;
+}
+
+.game-title{
+  color: black;
+}
+
+.game-window{
+  width: 100%;
+  height: 75%;
+  border: 0;
+}
