@@ -1,0 +1,41 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin:0;
+  border:0;
+  padding:0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+
+
+iframe{
+  zoom: 0.65;
+  transform: scale(0.65);
+  transform-origin: 0 0;
+  -ms-zoom: 0.65;
+  -moz-transform: scale(0.65);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.65);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.65);
+  -webkit-transform-origin: 0 0;
+  width: 900px;
+  height:900px;
+  border: 0;
+  margin-left: 225px;
+  position: relative;
+  left: -300px;
+}
+
+#game-div{
+  height: 325px;
+  width: 325px;
+  overflow: hidden;
+}
+
+#menu{
+  background-color: #fefefe;
+  padding: 10px;
+}

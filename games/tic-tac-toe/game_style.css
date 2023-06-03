@@ -1,0 +1,74 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin:0;
+  border:0;
+  padding:0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+#board{
+    width:200px;
+    height:200px;
+    position:absolute;
+    z-index:0;
+}
+
+#board-img{
+  filter: invert(100%);
+}
+
+div .section{
+    position:absolute;
+    z-index:1;
+    height: 70%;
+    width: 70%;
+}
+
+div #section1{
+    bottom: 40px;
+    right:-15px;
+}
+
+div #section2{
+    bottom: 40px;
+    right:-182.5px;
+}
+
+div #section3{
+    bottom: 40px;
+    right:-350px;
+}
+
+div #section4{
+    bottom: -125px;
+    right:-15px;
+}
+
+div #section5{
+    bottom: -125px;
+    right:-182.5px;
+}
+
+div #section6{
+    bottom: -125px;
+    right:-350px;
+}
+
+div #section7{
+    bottom: -290px;
+    right:-15px;
+}
+
+div #section8{
+    bottom: -290px;
+    right:-182.5px;
+}
+
+div #section9{
+    bottom: -290px;
+    right:-350px;
+}
+
+
