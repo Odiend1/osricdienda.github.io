@@ -1,12 +1,6 @@
 var menu = document.getElementById('menu');
+var content = document.getElementById('content');
 var codeNum = 0;
-
-if(window.innerWidth < 700){
-  menu.hidden = true;
-}
-else{
-  menu.hidden = false;
-}
 
 var planet = document.getElementById('planet');
 
@@ -30,18 +24,70 @@ addEventListener("load", (event) => {
   resizeContainers();
 });
 
-addEventListener("resize", (event) => {
-  resizeContainers();
-  if(window.innerWidth < 700){
-    menu.hidden = true;
-  }
-  else{
-    menu.hidden = false;
-  }  
-});
 
 ssp.onclick = function(){
     window.location.href = "./superscript+/";
+}
+var menuClosing = true;
+var openMenu = document.getElementById("open-menu");
+var menuDialog = document.getElementById("menu-dialog")
+var menuWrapper = document.getElementById("menu-wrapper");
+menuDialog.style.left = menuWrapper.offsetLeft + "px";
+openMenu.onclick = function(){
+  menuDialog.showModal();
+  menuClosing = false;
+}
+menu.addEventListener('click', (event) => {
+  menuClosing = false;
+})
+
+document.addEventListener('click', (event) => {
+  setTimeout(function(){if(menuClosing){menuDialog.close()} else{menuClosing = true}}, 10)
+});
+
+var nonDialogMenu;
+
+if(window.innerWidth >= 700){
+  nonDialogMenu = menu.cloneNode(true);
+  nonDialogMenu.id = "nd-menu";
+  document.getElementsByTagName("body")[0].insertBefore(nonDialogMenu, document.getElementsByTagName("body")[0].children[0]);
+  openMenu.hidden = true;
+  //menuDialog.hidden = true;
+}
+else{
+  menuDialog.hidden = false;
+}
+
+window.addEventListener('resize', (event) => {
+if(window.innerWidth >= 700){
+  if(document.getElementsByTagName("body")[0].children[0].id !== "nd-menu") {
+    nonDialogMenu = menu.cloneNode(true);
+  nonDialogMenu.id = "nd-menu";
+  document.getElementsByTagName("body")[0].insertBefore(nonDialogMenu, document.getElementsByTagName("body")[0].children[0]);
+  }
+  openMenu.hidden = true;
+  menuDialog.close();
+}
+  else{
+    if(document.getElementsByTagName("body")[0].children[0].id === "nd-menu"){ document.getElementsByTagName("body")[0].removeChild(document.getElementsByTagName("body")[0].children[0]);}
+  openMenu.hidden = false;
+    menuDialog.hidden = false;
+  }
+});
+
+var homeButton = document.getElementById("tohome");
+homeButton.onclick = function(){
+  setTimeout(function(){menuClosing = true}, 1)
+}
+
+var aboutButton = document.getElementById("toabout");
+aboutButton.onclick = function(){
+  setTimeout(function(){menuClosing = true}, 1)
+}
+
+var projectsButton = document.getElementById("toprojects");
+projectsButton.onclick = function(){
+  setTimeout(function(){menuClosing = true}, 1)
 }
 
 document.onkeydown = function (e) {
