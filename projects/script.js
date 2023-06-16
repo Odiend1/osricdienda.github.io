@@ -1,10 +1,6 @@
 var menu = document.getElementById('menu');
 var codeNum = 0;
 
-if(window.innerWidth < 700){
-  menu.hidden = true;
-}
-
 var planet = document.getElementById('planet');
 
 planet.onclick = function(){
@@ -21,14 +17,16 @@ osmosis.onclick = function(){
   window.location.href = "./osmosis/"
 }
 
-function resizeContainers(){
-  ssp.style.width = planet.offsetWidth - 2 + "px";
-  ssp.style.height = planet.offHeight - 2 + "px";
-  osmosis.style.width = planet.offsetWidth - 2 + "px";
-  osmosis.style.height = planet.offHeight - 2 + "px";
-}
+var width;
+var height;
 
-resizeContainers();
+function resizeContainers(){
+  if(width === undefined || height === undefined) var style = window.getComputedStyle(planet)
+  if(width === undefined) width = style.getPropertyValue('width');
+  if(height === undefined) var height = style.getPropertyValue('height');
+  ssp.style.width = width;
+  osmosis.style.width = width;
+}
 
 addEventListener("DOMContentLoaded", function(event) {
   resizeContainers();
@@ -42,5 +40,6 @@ addEventListener("resize", (event) => {
   resizeContainers();
 });
 
-planet.remove();
-
+addEventListener("load", function(event){
+  planet.remove();
+});

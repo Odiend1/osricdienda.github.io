@@ -1,20 +1,27 @@
-var menu = document.getElementById('menu');
 var content = document.getElementById('content');
 var codeNum = 0;
 
 var planet = document.getElementById('planet');
+var ssp = document.getElementById('superscript+');
+
 
 planet.onclick = function(){
   window.location.href = "./blog/planets/J1407b/";
 }
 
-function resizeContainers(){
-  ssp.style.width = planet.offsetWidth - 2 + "px";
-  ssp.style.height = planet.offHeight - 2 + "px";
+ssp.onclick = function(){
+    window.location.href = "./superscript+/";
 }
 
-var ssp = document.getElementById('superscript+');
-resizeContainers();
+function resizeContainers(){
+  
+  var style = window.getComputedStyle(planet)
+  var width = style.getPropertyValue('width');
+  ssp.style.width = width;
+  
+  //ssp.style.width = planet.offsetWidth - 2 + "px";
+  //ssp.style.height = planet.offsetHeight - 2 + "px";
+}
 
 addEventListener("DOMContentLoaded", function(event) {
   resizeContainers();
@@ -24,71 +31,11 @@ addEventListener("load", (event) => {
   resizeContainers();
 });
 
-
-ssp.onclick = function(){
-    window.location.href = "./superscript+/";
-}
-var menuClosing = true;
-var openMenu = document.getElementById("open-menu");
-var menuDialog = document.getElementById("menu-dialog")
-var menuWrapper = document.getElementById("menu-wrapper");
-menuDialog.style.left = menuWrapper.offsetLeft + "px";
-openMenu.onclick = function(){
-  menuDialog.showModal();
-  menuClosing = false;
-}
-menu.addEventListener('click', (event) => {
-  menuClosing = false;
-})
-
-document.addEventListener('click', (event) => {
-  setTimeout(function(){if(menuClosing){menuDialog.close()} else{menuClosing = true}}, 10)
+window.addEventListener("resize", (event) => {
+  resizeContainers();
 });
 
-var nonDialogMenu;
 
-if(window.innerWidth >= 700){
-  nonDialogMenu = menu.cloneNode(true);
-  nonDialogMenu.id = "nd-menu";
-  document.getElementsByTagName("body")[0].insertBefore(nonDialogMenu, document.getElementsByTagName("body")[0].children[0]);
-  openMenu.hidden = true;
-  //menuDialog.hidden = true;
-}
-else{
-  menuDialog.hidden = false;
-}
-
-window.addEventListener('resize', (event) => {
-if(window.innerWidth >= 700){
-  if(document.getElementsByTagName("body")[0].children[0].id !== "nd-menu") {
-    nonDialogMenu = menu.cloneNode(true);
-  nonDialogMenu.id = "nd-menu";
-  document.getElementsByTagName("body")[0].insertBefore(nonDialogMenu, document.getElementsByTagName("body")[0].children[0]);
-  }
-  openMenu.hidden = true;
-  menuDialog.close();
-}
-  else{
-    if(document.getElementsByTagName("body")[0].children[0].id === "nd-menu"){ document.getElementsByTagName("body")[0].removeChild(document.getElementsByTagName("body")[0].children[0]);}
-  openMenu.hidden = false;
-    menuDialog.hidden = false;
-  }
-});
-
-var homeButton = document.getElementById("tohome");
-homeButton.onclick = function(){
-  setTimeout(function(){menuClosing = true}, 1)
-}
-
-var aboutButton = document.getElementById("toabout");
-aboutButton.onclick = function(){
-  setTimeout(function(){menuClosing = true}, 1)
-}
-
-var projectsButton = document.getElementById("toprojects");
-projectsButton.onclick = function(){
-  setTimeout(function(){menuClosing = true}, 1)
-}
 
 document.onkeydown = function (e) {
     e = e || window.event;
