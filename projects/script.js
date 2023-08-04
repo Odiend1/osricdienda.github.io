@@ -17,6 +17,11 @@ osmosis.onclick = function(){
   window.location.href = "./osmosis/"
 }
 
+var messier = document.getElementById('messier-api');
+messier.onclick = function(){
+  window.location.href = "/messier-api/"
+}
+
 var width;
 var height;
 
@@ -26,6 +31,7 @@ function resizeContainers(){
   if(height === undefined) var height = style.getPropertyValue('height');
   ssp.style.width = width;
   osmosis.style.width = width;
+  messier.style.width = width;
 }
 
 addEventListener("DOMContentLoaded", function(event) {
