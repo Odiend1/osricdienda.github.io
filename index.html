@@ -8,7 +8,7 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body style="position: absolute;">
   
   <div id="content">
   <br>
@@ -26,24 +26,21 @@
   </div>
   <br><br><br><br><br>
     <center><div id="planet" class="center">
-      <h2>Osric's Featured Planet</h2>
+      <h2 id="slideshow-h1">Osric's Featured Planet</h2>
       <br>
-      <h3>J1407b</h3>
+      <h3 id="slideshow-h2">J1407b</h3>
       <br>
-      <img src="./blog/planets/J1407b/j1407b.jpg" class="center planet container">
+      <img id="slideshow-image" src="./blog/planets/J1407b/j1407b.jpg" class="center planet container" style="border: 1px white solid; padding: 0;">
       <br>
       <a href="./blog/planets/J1407b/"><button>Learn More</button></a>
-    </div></center>
-    <br><br><br>
-    <center><div id="superscript+" class="container center">
-      <h2>Superscript+</h2>
-      <br>
-      <h3>TX District 15 Congressional App Challenge Winner</h3>
-      <br>
-      <img src="./superscript+/Superscript+ Updated Simple.png" class="center" style="max-width:250px;">
-      <br>
-      <a href="./superscript+/"><button>Learn More</button></a>
-    </div></center>
+    </div>
+    <br><br>
+    <div class="slideshow-ui-div">
+    <button id="slideshow-left" class="slideshow-button">❮</button>
+      <input type="radio" class="slide-radio">
+      <input type="radio" class="slide-radio">
+      <input type="radio" class="slide-radio">
+      <button id="slideshow-right" class="slideshow-button">❯</button></div></center>
     <br>
     <br>
   <div id="about">

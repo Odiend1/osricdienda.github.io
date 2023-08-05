@@ -1,8 +1,21 @@
-var menu = document.getElementById('menu');
-var codeNum = 0;
+var text = document.getElementById('text');
 
-var p = document.getElementById('p');
-
-else{
-  p.style.paddingLeft = "150px";
+if(window.innerWidth >= 700){
+  text.style.paddingLeft = "120px";
+  text.style.paddingRight = "120px";
 }
+else{
+  text.style.paddingLeft = "0px";
+  text.style.paddingRight = "0px";
+}
+
+window.addEventListener("resize", function(){
+  if(window.innerWidth >= 700){
+    text.style.paddingLeft = "120px";
+    text.style.paddingRight = "120px";
+  }
+  else{
+    text.style.paddingLeft = "0px";
+    text.style.paddingRight = "0px";
+  }
+})
