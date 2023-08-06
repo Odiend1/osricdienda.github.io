@@ -94,6 +94,7 @@ if(window.innerWidth < 541) slides[0].h2 += "<br>&nbsp;";
 var slideshowH1 = document.getElementById("slideshow-h1");
 var slideshowH2 = document.getElementById("slideshow-h2");
 var slideRadios = document.getElementsByClassName("slide-radio");
+var learnMoreButton = document.getElementById("learn-more");
 var currentSlide = 0;
 var slideshowInterrupted = 0;
 Array.from(slideRadios).forEach(radio => {
@@ -108,6 +109,7 @@ Array.from(slideRadios).forEach(radio => {
     slideshowH2.innerHTML = slides[Array.from(slideRadios).indexOf(radio)].h2;
     slideshowImage.src = slides[Array.from(slideRadios).indexOf(radio)].image;
     planet.onclick = function(){window.location.href = slides[Array.from(slideRadios).indexOf(radio)].href};
+    learnMoreButton.href = slides[Array.from(slideRadios).indexOf(radio)].href;
     try{
       planet.style.width = containerWidth;
       slideshowImage.style.height = imageHeight;
