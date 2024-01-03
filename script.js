@@ -1,3 +1,9 @@
+console.log("  ___           _        ____  _                _       " + "\n" +
+"  / _ \ ___ _ __(_) ___  |  _ \(_) ___ _ __   __| | __ _ " + "\n" +
+"  | | | / __| '__| |/ __| | | | | |/ _ \ '_ \ / _` |/ _` |" + "\n" +
+"  | |_| \__ \ |  | | (__  | |_| | |  __/ | | | (_| | (_| |" + "\n" +
+"   \___/|___/_|  |_|\___| |____/|_|\___|_| |_|\__,_|\__,_|")
+
 var content = document.getElementById('content');
 var codeNum = 0;
 var body = document.getElementsByTagName("body")[0];
@@ -177,7 +183,7 @@ document.onkeydown = function (e) {
     }
   if(e.key == 'a'){
       if(codeNum == 9){
-        window.location.href = window.location.href + "blockbreaker"
+        window.location.href = "https://" + window.location.hostname + "/blockbreaker";
       }
     else{
       codeNum = 0;
