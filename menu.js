@@ -1,4 +1,5 @@
 addEventListener("load", function(event) {
+  var menuHidden = false;
 //document.getElementsByTagName('body')[0].innerHTML = "<button id='open-menu'><img src='/assets/menu_icon.png' height='30px' width='30px' style='padding:1px; padding-top:3px;'></button> <div id='menu-wrapper'> <dialog id='menu-dialog'> <div id='menu'> <a id='tohome' href='/#home'>Home</a> <br> <a id='toabout' href='/#about'>About</a> <br> <a id='toprojects' href='/projects'>Projects</a> </div> </dialog> </div>" + document.getElementsByTagName('body')[0].innerHTML;
 var menuWrapper = document.createElement("div");
 menuWrapper.id = "menu-wrapper";
@@ -6,23 +7,65 @@ var menuDialog = document.createElement("dialog");
 menuDialog.id = "menu-dialog";
 var menu = document.createElement("div");
 menu.id = "menu";
+  
 var homeButton = document.createElement("a");
 homeButton.innerHTML = "Home";
 homeButton.id = "tohome";
 homeButton.href = "/#home";
+  
 var aboutButton = document.createElement("a");
 aboutButton.innerHTML = "About";
 aboutButton.id = "toabout";
 aboutButton.href = "/#about";
+  
 var projectsButton = document.createElement("a");
 projectsButton.innerHTML = "Projects";
 projectsButton.id = "toprojects";
 projectsButton.href = "/projects";
+  
+var contactButton = document.createElement("a");
+var openDialog = true;
+function openContactDialog(){
+  if(openDialog) {
+    if(!menuHidden && window.innerWidth >= 700) {
+      document.getElementById('contact-dialog').showModal();
+      setTimeout(confirmContactDialog, 500);
+    }
+    else window.location.href = "/contact";
+  }
+  openDialog = true;
+}
+function confirmContactDialog(){
+  console.log("checking...")
+   if(openDialog = true && !document.getElementById('contact-dialog').open){
+     console.log("redirecting");
+     window.location.href = "/contact";
+   } 
+}
+function closeContactDialog(){document.getElementById('contact-dialog').close(); openDialog = false;};
+contactButton.innerHTML = `Contact<dialog id="contact-dialog"> <div id="contact" style="text-align: center;"> <div style="width: 100%; text-align: right;"> <button id="close-contact-dialog">X</button> </div> <h2>Contact Me!</h2> <br> <form action="https://formspree.io/f/mwkgbrzn" method="POST"> <label style="text-decoration: underline;"> Your Name<br> <label><input name="name" style="margin: 10px;" required></input></label> </label> <br><br> <label style="text-decoration: underline;"> Your Email<br> <input type="email" name="email" style="margin: 10px;" required> </label> <br><br> <label style="text-decoration: underline;"> Message<br> <textarea name="message" style="width: 300px; height: 100px; margin: 10px;" required></textarea> </label> <br><br> <button type="submit">Send</button> </form> </div> </dialog>`;
+contactButton.id = "contactme";
+contactButton.href = "javascript:void(0);"
+  
 menu.appendChild(homeButton);
 menu.appendChild(document.createElement("br"));
 menu.appendChild(aboutButton);
 menu.appendChild(document.createElement("br"));
 menu.appendChild(projectsButton);
+menu.appendChild(document.createElement("br"));
+menu.appendChild(contactButton);
+activateContactButtons();
+
+function activateContactButtons(){
+  if(document.getElementById("contactme") != null && document.getElementById("close-contact-dialog") != null){
+    document.getElementById("contactme").onclick = openContactDialog;
+    document.getElementById('close-contact-dialog').onclick = closeContactDialog;
+  }
+  else{
+    setTimeout(activateContactButtons, 100);
+  }
+}
+  
 menuDialog.appendChild(menu);
 menuWrapper.appendChild(menuDialog);
 var openMenu = document.createElement("button");
@@ -64,10 +107,12 @@ if(window.innerWidth >= 700){
   nonDialogMenu.id = "nd-menu";
   document.getElementsByTagName("body")[0].insertBefore(nonDialogMenu, document.getElementsByTagName("body")[0].children[0]);
   openMenu.hidden = true;
+  menuHidden = false;
   //menuDialog.hidden = true;
 }
 else{
   menuDialog.hidden = false;
+  menuHidden = true;
 }
 
 window.addEventListener('resize', (event) => {
@@ -85,6 +130,7 @@ if(window.innerWidth >= 700){
   openMenu.hidden = false;
     menuDialog.hidden = false;
   }
+  activateContactButtons();
 });
 
 homeButton = document.getElementById("tohome");
@@ -102,3 +148,4 @@ projectsButton.onclick = function(){
   setTimeout(function(){menuClosing = true}, 1)
 }
     });
+
