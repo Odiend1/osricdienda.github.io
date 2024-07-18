@@ -138,6 +138,11 @@ dialog{
   border-bottom: #0544d6;
 }
 
+.hyperlink:visited{
+  color: #a600ff;
+  border-bottom: #7805d6;
+}
+
 .planet{
   max-width: 75%;
   height: auto;

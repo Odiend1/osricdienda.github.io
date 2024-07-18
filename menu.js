@@ -59,7 +59,9 @@ activateContactButtons();
 function activateContactButtons(){
   if(document.getElementById("contactme") != null && document.getElementById("close-contact-dialog") != null && (window.location.pathname !== '/' || document.getElementById("mail-button") != null)){
     document.getElementById("contactme").onclick = openContactDialog;
-    if(document.getElementById("mail-button") != null) document.getElementById("mail-button").onclick = openContactDialog;
+    if(document.getElementById("mail-button") != null){
+      document.getElementById("mail-button").onclick = openContactDialog;
+    }
     document.getElementById('close-contact-dialog').onclick = closeContactDialog;
   }
   else{
