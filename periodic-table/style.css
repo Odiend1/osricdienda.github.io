@@ -1,0 +1,139 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+td{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border: 1px black solid;
+  position: relative;
+}
+
+.empty-cell{
+  visibility: hidden;
+}
+
+.reference-cell{
+  font-size: 12px;
+  border: none
+}
+
+.atomic-number{
+  font-size: 8px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+input{
+  outline: none !important;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+input:focus{
+  outline: none !important;
+  border: 2px solid #0091ff;
+}
+
+#settings-container{
+  text-align: center;
+}
+
+#settings{
+  text-align: left;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+#game-info{
+  text-align: right;
+}
+
+@keyframes correctAnswer{
+  to{
+    border-color: lime;
+  }
+}
+
+.correct-input{
+  outline: none !important;
+  animation: correctAnswer 0.33s;
+}
+
+.correct-input:focus{
+  outline: none !important;
+  animation: correctAnswer 0.33s;
+}
+
+.unanswered{
+  opacity: 0.4;
+}
+
+#hint-button{
+  color: #0058cc;
+}
+
+#hint-button:visited{
+  color: #0058cc;
+}
+
+.hydrogen{
+  background-color: lightyellow;
+}
+
+.noble-gases{
+  background-color: #fde5ff;
+}
+
+.alkali-metals{
+  background-color: #ffd6d6;
+}
+
+.alkali-earth-metals{
+  background-color: #d6d1ff;
+}
+
+.transition-metals{
+  background-color: #d6efff;
+}
+
+.post-transition-metals{
+  background-color: #c6ebc6;
+}
+
+.metalloids{
+  background-color: #e6fad1;
+}
+
+.nonmetals{
+  background-color: lightyellow;
+}
+
+.halogens{
+  background-color: #ffeac2;
+}
+
+.lanthanides{
+  background-color: lightcyan;
+}
+
+.actinides{
+  background-color: #d6fff9;
+}
+
+.no-color{
+  background-color: white;
+}
+
+.highlighted-cell{
+  filter: saturate(1000%);
+  opacity: 1;
+}
+
+.yellow-highlighted-cell{
+  background-color: yellow;
+  filter: saturate(100%);
+}

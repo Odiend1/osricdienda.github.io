@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Periodic Table Quiz</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+</head>
+
+<body>
+  <div id="game-info">
+    <label id="score">Score: 0/118</label>
+    <br>
+    <label id="time">00:00:00</label>
+  </div>
+  <center>
+  <h1>Periodic Table Quiz</h1>
+  <div id="table-background">
+  <table id="periodic-table">
+    <tr>
+      <td class="element-cell hydrogen" id="element-1">H</td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="element-cell noble-gases" id="element-2">He</td>
+    </tr>
+    <tr>
+      <td class="element-cell alkali-metals" id="element-3">Li</td>
+      <td class="element-cell alkali-earth-metals" id="element-4">Be</td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="element-cell metalloids" id="element-5">B</td>
+      <td class="element-cell nonmetals" id="element-6">C</td>
+      <td class="element-cell nonmetals" id="element-7">N</td>
+      <td class="element-cell nonmetals" id="element-8">O</td>
+      <td class="element-cell halogens" id="element-9">F</td>
+      <td class="element-cell noble-gases" id="element-10">Ne</td>
+    </tr>
+    <tr>
+      <td class="element-cell alkali-metals" id="element-11">Na</td>
+      <td class="element-cell alkali-earth-metals" id="element-12">Mg</td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="empty-cell"></td>
+      <td class="element-cell post-transition-metals" id="element-13">Al</td>
+      <td class="element-cell metalloids" id="element-14">Si</td>
+      <td class="element-cell nonmetals" id="element-15">P</td>
+      <td class="element-cell nonmetals" id="element-16">S</td>
+      <td class="element-cell halogens" id="element-17">Cl</td>
+      <td class="element-cell noble-gases" id="element-18">Ar</td>
+    </tr>
+    <tr>
+      <td class="element-cell alkali-metals" id="element-19">K</td>
+      <td class="element-cell alkali-earth-metals" id="element-20">Ca</td>
+      
+      <td class="element-cell transition-metals" id="element-21">Sc</td>
+      <td class="element-cell transition-metals" id="element-22">Ti</td>
+      <td class="element-cell transition-metals" id="element-23">V</td>
+      <td class="element-cell transition-metals" id="element-24">Cr</td>
+      <td class="element-cell transition-metals" id="element-25">Mn</td>
+      <td class="element-cell transition-metals" id="element-26">Fe</td>
+      <td class="element-cell transition-metals" id="element-27">Co</td>
+      <td class="element-cell transition-metals" id="element-28">Ni</td>
+      <td class="element-cell transition-metals" id="element-29">Cu</td>
+      <td class="element-cell transition-metals" id="element-30">Zn</td>
+      <td class="element-cell post-transition-metals" id="element-31">Ga</td>
+      <td class="element-cell metalloids" id="element-32">Ge</td>
+      <td class="element-cell metalloids" id="element-33">As</td>
+      <td class="element-cell nonmetals" id="element-34">Se</td>
+      <td class="element-cell halogens" id="element-35">Br</td>
+      <td class="element-cell noble-gases" id="element-36">Kr</td>
+    </tr>
+    <tr>
+      <td class="element-cell alkali-metals" id="element-37">Rb</td>
+      <td class="element-cell alkali-earth-metals" id="element-38">Sr</td>
+      
+      <td class="element-cell transition-metals" id="element-39">Y</td>
+      <td class="element-cell transition-metals" id="element-40">Zr</td>
+      <td class="element-cell transition-metals" id="element-41">Nb</td>
+      <td class="element-cell transition-metals" id="element-42">Mo</td>
+      <td class="element-cell transition-metals" id="element-43">Tc</td>
+      <td class="element-cell transition-metals" id="element-44">Ru</td>
+      <td class="element-cell transition-metals" id="element-45">Rh</td>
+      <td class="element-cell transition-metals" id="element-46">Pd</td>
+      <td class="element-cell transition-metals" id="element-47">Ag</td>
+      <td class="element-cell transition-metals" id="element-48">Cd</td>
+      <td class="element-cell post-transition-metals" id="element-49">In</td>
+      <td class="element-cell post-transition-metals" id="element-50">Sn</td>
+      <td class="element-cell metalloids" id="element-51">Sb</td>
+      <td class="element-cell metalloids" id="element-52">Te</td>
+      <td class="element-cell halogens" id="element-53">I</td>
+      <td class="element-cell noble-gases" id="element-54">Xe</td>
+    </tr>
+    <tr>
+      <td class="element-cell alkali-metals" id="element-55">Cs</td>
+      <td class="element-cell alkali-earth-metals" id="element-56">Ba</td>
+      <td class="reference-cell">*</td>
+      <td class="element-cell transition-metals" id="element-72">Hf</td>
+      <td class="element-cell transition-metals" id="element-73">Ta</td>
+      <td class="element-cell transition-metals" id="element-74">W</td>
+      <td class="element-cell transition-metals" id="element-75">Re</td>
+      <td class="element-cell transition-metals" id="element-76">Os</td>
+      <td class="element-cell transition-metals" id="element-77">Ir</td>
+      <td class="element-cell transition-metals" id="element-78">Pt</td>
+      <td class="element-cell transition-metals" id="element-79">Au</td>
+      <td class="element-cell transition-metals" id="element-80">Hg</td>
+      <td class="element-cell post-transition-metals" id="element-81">Tl</td>
+      <td class="element-cell post-transition-metals" id="element-82">Pb</td>
+      <td class="element-cell post-transition-metals" id="element-83">Bi</td>
+      <td class="element-cell metalloids" id="element-84">Po</td>
+      <td class="element-cell halogens" id="element-85">At</td>
+      <td class="element-cell noble-gases" id="element-86">Rn</td>
+    </tr>
+    <tr>
+      <td class="element-cell alkali-metals" id="element-87">Fr</td>
+      <td class="element-cell alkali-earth-metals" id="element-88">Ra</td>
+      <td class="reference-cell">**</td>
+      <td class="element-cell transition-metals" id="element-104">Rf</td>
+      <td class="element-cell transition-metals" id="element-105">Db</td>
+      <td class="element-cell transition-metals" id="element-106">Sg</td>
+      <td class="element-cell transition-metals" id="element-107">Bh</td>
+      <td class="element-cell transition-metals" id="element-108">Hs</td>
+      <td class="element-cell transition-metals" id="element-109">Mt</td>
+      <td class="element-cell transition-metals" id="element-110">Ds</td>
+      <td class="element-cell transition-metals" id="element-111">Rg</td>
+      <td class="element-cell transition-metals" id="element-112">Cn</td>
+      <td class="element-cell post-transition-metals" id="element-113">Nh</td>
+      <td class="element-cell post-transition-metals" id="element-114">Fl</td>
+      <td class="element-cell post-transition-metals" id="element-115">Mc</td>
+      <td class="element-cell post-transition-metals" id="element-116">Lv</td>
+      <td class="element-cell halogens" id="element-117">Ts</td>
+      <td class="element-cell noble-gases" id="element-118">Og</td>
+    </tr>
+    <tr>
+      <td class="empty-cell">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan=3 class="reference-cell"><div style="width: 0px; height: 0px;">Lanthanides*</div></td>
+      <td class="element-cell lanthanides" id="element-57">La</td>
+      <td class="element-cell lanthanides" id="element-58">Ce</td>
+      <td class="element-cell lanthanides" id="element-59">Pr</td>
+      <td class="element-cell lanthanides" id="element-60">Nd</td>
+      <td class="element-cell lanthanides" id="element-61">Pm</td>
+      <td class="element-cell lanthanides" id="element-62">Sm</td>
+      <td class="element-cell lanthanides" id="element-63">Eu</td>
+      <td class="element-cell lanthanides" id="element-64">Gd</td>
+      <td class="element-cell lanthanides" id="element-65">Tb</td>
+      <td class="element-cell lanthanides" id="element-66">Dy</td>
+      <td class="element-cell lanthanides" id="element-67">Ho</td>
+      <td class="element-cell lanthanides" id="element-68">Er</td>
+      <td class="element-cell lanthanides" id="element-69">Tm</td>
+      <td class="element-cell lanthanides" id="element-70">Yb</td>
+      <td class="element-cell lanthanides" id="element-71">Lu</td>
+    </tr>
+    <tr>
+      <td class="reference-cell" colspan=3><div style="width: 0px; height: 0px;">Actinides**</div></td>
+      <td class="element-cell actinides" id="element-89">Ac</td>
+      <td class="element-cell actinides" id="element-90">Th</td>
+      <td class="element-cell actinides" id="element-91">Pa</td>
+      <td class="element-cell actinides" id="element-92">U</td>
+      <td class="element-cell actinides" id="element-93">Np</td>
+      <td class="element-cell actinides" id="element-94">Pu</td>
+      <td class="element-cell actinides" id="element-95">Am</td>
+      <td class="element-cell actinides" id="element-96">Cm</td>
+      <td class="element-cell actinides" id="element-97">Bk</td>
+      <td class="element-cell actinides" id="element-98">Cf</td>
+      <td class="element-cell actinides" id="element-99">Es</td>
+      <td class="element-cell actinides" id="element-100">Fm</td>
+      <td class="element-cell actinides" id="element-101">Md</td>
+      <td class="element-cell actinides" id="element-102">No</td>
+      <td class="element-cell actinides" id="element-103">Lr</td>
+    </tr>
+  </table>
+  </div>
+  <br>
+    
+  <div id="settings-container">
+    <div id="settings">
+    <input id="elements-in-order" type="checkbox" checked="true"><label>Enter Elements in Order</label>
+    <br>
+    <input id="random-elements" type="checkbox"><label>Select Random Elements</label>
+    <br>
+  <input id="show-symbols" type="checkbox"><label>Show Atomic Symbols</label>
+    <br>
+    <input id="show-colors" type="checkbox" checked="true"><label>Show Colors</label>
+    </div>
+    <br><br>
+    <button id="start-button">Start Game</button>
+  </div>
+    
+  <div id="input-container" hidden>
+    <input id="game-input" type="text" placeholder="Type Element Here..." autofocus>
+    <br><br>
+    <a id="hint-button" href="javascript:void(0);">Get a Hint</a><br><br>
+    <span id="hint-text"></span>
+  </div>
+  <br><br>
+  <script src="elements.js"></script>
+  <script src="script.js"></script>
+  </center>
+</body>
+
+</html>

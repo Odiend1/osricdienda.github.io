@@ -1,0 +1,40 @@
+{
+    "id": "fecdcb3e-cd55-481d-9858-23eee214b100",
+    "title": "Periodic Table Quiz",
+    "isPrivate": false,
+    "slug": "Periodic-Table-Quiz",
+    "wasPublished": false,
+    "timeCreated": "2024-08-24T00:20:01.565Z",
+    "timeUpdated": "2024-08-26T17:47:47.009Z",
+    "user": {
+        "id": 6493414,
+        "username": "Odiend1"
+    },
+    "language": "html",
+    "config": {
+        "isServer": null,
+        "isExtension": null,
+        "gitRemoteUrl": null,
+        "isVnc": null,
+        "doClone": null
+    },
+    "multiplayers": [],
+    "source": {
+        "release": {
+            "id": "d80bec42-5cce-4408-bedc-c0aecc35d1cc",
+            "description": "add entrypoint",
+            "hostedUrl": "https://release-d80bec42-5cce-4408-bedc-c0aecc35d1cc.id.repl.co",
+            "user": {
+                "id": 18567562,
+                "username": "ryantmreplit"
+            }
+        },
+        "deployment": {
+            "id": 105,
+            "domain": null
+        }
+    },
+    "domains": [],
+    "isAlwaysOn": false,
+    "isBoosted": false
+}
