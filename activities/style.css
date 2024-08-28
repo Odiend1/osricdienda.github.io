@@ -1,0 +1,27 @@
+
+.activity-container{
+  width: 400px;
+  height: 500px;
+  border: 1px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px;
+  display: inline-block;
+}
+
+.activity-header{
+  background-color: #212121;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.activity-image{
+  width: 400px;
+}
+
+.activity-description{
+  width: 380px;
+  height: 180px;
+  margin: 10px;
+}

@@ -1,0 +1,40 @@
+{
+    "id": "2eccc851-bbc9-49d5-bd46-e7c88280038a",
+    "title": "Osric Dienda",
+    "isPrivate": false,
+    "slug": "Osric-Dienda",
+    "wasPublished": false,
+    "timeCreated": "2022-12-31T22:44:30.983Z",
+    "timeUpdated": "2024-08-26T21:52:22.745Z",
+    "user": {
+        "id": 6493414,
+        "username": "Odiend1"
+    },
+    "language": "html",
+    "config": {
+        "isServer": null,
+        "isExtension": null,
+        "gitRemoteUrl": null,
+        "isVnc": null,
+        "doClone": null
+    },
+    "multiplayers": [],
+    "source": {
+        "release": {
+            "id": "c4ef9138-fb74-4a6a-ae00-f2283e0cf5f5",
+            "description": "move github imports to the bottom of .replit",
+            "hostedUrl": "https://release-c4ef9138-fb74-4a6a-ae00-f2283e0cf5f5.id.repl.co",
+            "user": {
+                "id": 13999037,
+                "username": "VictorWang19"
+            }
+        },
+        "deployment": {
+            "id": 105,
+            "domain": null
+        }
+    },
+    "domains": [],
+    "isAlwaysOn": false,
+    "isBoosted": false
+}

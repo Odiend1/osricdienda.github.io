@@ -8,16 +8,16 @@ planet.onclick = function(){
 }
 
 var qr = document.getElementById('qr');
-qr.style.width = planet.offsetWidth + "px";
-qr.style.height = planet.offHeight + "px";
+qr.style.width = planet.offsetWidth *.75 + "px";
+qr.style.height = planet.offHeight *.75 + "px";
 
 qr.onclick = function(){
   window.location.href = "/qr/";
 }
 
 var canvas = document.getElementById('canvas');
-canvas.style.width = planet.offsetWidth + "px";
-canvas.style.height = planet.offHeight + "px";
+canvas.style.width = planet.offsetWidth * .75 + "px";
+canvas.style.height = planet.offHeight *.75 + "px";
 
 canvas.onclick = function(){
   window.location.href = "/canvas/";

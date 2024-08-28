@@ -26,12 +26,13 @@ var width;
 var height;
 
 function resizeContainers(){
-  if(width === undefined || height === undefined) var style = window.getComputedStyle(planet)
-  if(width === undefined) width = style.getPropertyValue('width');
-  if(height === undefined) var height = style.getPropertyValue('height');
-  ssp.style.width = width;
-  osmosis.style.width = width;
-  messier.style.width = width;
+  var style = window.getComputedStyle(planet)
+  width = style.getPropertyValue('width');
+  height = style.getPropertyValue('height');
+  console.log(width)
+  ssp.style.width = parseInt(width.slice(0, -2)) * 0.75 + "px";
+  osmosis.style.width = parseInt(width.slice(0, -2)) * 0.75 + "px";
+  messier.style.width = parseInt(width.slice(0, -2)) * 0.75 + "px";
 }
 
 addEventListener("DOMContentLoaded", function(event) {
@@ -47,5 +48,5 @@ addEventListener("resize", (event) => {
 });
 
 addEventListener("load", function(event){
-  planet.remove();
+  // planet.remove();
 });

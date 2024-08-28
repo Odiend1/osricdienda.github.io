@@ -177,4 +177,5 @@ hintButton.onclick = function(){
       hintButton.innerHTML = "Hint " + hintsGiven + "/" + currentElementName.length;
     }
   }
+  gameInput.focus();
 }

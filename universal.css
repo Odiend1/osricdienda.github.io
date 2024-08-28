@@ -1,0 +1,45 @@
+:root{
+  --text-color: #fff;
+  --gradient-background-color: linear-gradient(150deg,  #0a0a0b, #282525);
+  --gradient-background-color-2: linear-gradient(150deg, #323b48, #0f0f0f);
+  --gradient-background-color-3: linear-gradient(150deg,  #5e5e5e, #2e2e2e);
+  --gradient-background-color-4: linear-gradient(150deg,  #163274, #001d33);
+  --gradient-background-color-5: linear-gradient(150deg, #74a1c8 0%, #2d80c8 100%);
+  --sheen-gradient: linear-gradient(150deg, rgba(0,0,0,0) 0%,  rgba(0,0,0,0) 5.5%, #0f0 6%, rgba(0,0,0,0) 7%, rgba(0,0,0,0) 10.5%, #f0f 11%, rgba(0,0,0,0) 12%, rgba(0,0,0,0) 15.5%, #ff0 16%, rgba(0,0,0,0) 17%, rgba(0,0,0,0) 20.5%, #0f0 21%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 25.5%, #f0f 26%, rgba(0,0,0,0) 27%, rgba(0,0,0,0) 30.5%, #ff0 31%, rgba(0,0,0,0) 32%, rgba(0,0,0,0) 35.5%, #0f0 36%, rgba(0,0,0,0) 37%, rgba(0,0,0,0) 40.5%, #f0f 41%, rgba(0,0,0,0) 42%, rgba(0,0,0,0) 45.5%, #ff0 46%, rgba(0,0,0,0) 47%, rgba(0,0,0,0) 50.5%, #0f0 51%, rgba(0,0,0,0) 52%, rgba(0,0,0,0) 55.5%, #f0f 56%, rgba(0,0,0,0) 57%, rgba(0,0,0,0) 60.5%, #ff0 61%, rgba(0,0,0,0) 62%, rgba(0,0,0,0) 65.5%, #0f0 66%, rgba(0,0,0,0) 67%, rgba(0,0,0,0) 70.5%, #f0f 71%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 75.5%, #ff0 76%, rgba(0,0,0,0) 77%, rgba(0,0,0,0) 80.5%, #0f0 81%, rgba(0,0,0,0) 82%, rgba(0,0,0,0) 85.5%, #f0f 86%, rgba(0,0,0,0) 87%, rgba(0,0,0,0) 90.5%, #ff0 91%, rgba(0,0,0,0) 92%, rgba(0,0,0,0) 95.5%, #0f0 96%, rgba(0,0,0,0) 97%, rgba(0,0,0,0) 100%);
+  --solid-background-color: #242424;
+}
+
+body {
+  font-family: 'Schibsted Grotesk';
+  font-weight: 400;
+}
+
+#background{
+  z-index: -1;
+  position: fixed;
+  background: var(--gradient-background-color);
+  width: 100%;
+  height: 100%;
+}
+
+#background-sheen{
+  z-index: -1;
+  position: fixed;
+  background: var(--sheen-gradient);
+  opacity: 0.0075;
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Varela Round";
+  font-weight: 700;
+}
+
+.container{
+  border: 1px solid white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: inline-block;
+  height: auto;
+}

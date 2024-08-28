@@ -1,6 +1,6 @@
-addEventListener("load", function(event) {
+/*addEventListener("load", function(event) {
   var menuHidden = false;
-//document.getElementsByTagName('body')[0].innerHTML = "<button id='open-menu'><img src='/assets/menu_icon.png' height='30px' width='30px' style='padding:1px; padding-top:3px;'></button> <div id='menu-wrapper'> <dialog id='menu-dialog'> <div id='menu'> <a id='tohome' href='/#home'>Home</a> <br> <a id='toabout' href='/#about'>About</a> <br> <a id='toprojects' href='/projects'>Projects</a> </div> </dialog> </div>" + document.getElementsByTagName('body')[0].innerHTML;
+
 var menuWrapper = document.createElement("div");
 menuWrapper.id = "menu-wrapper";
 var menuDialog = document.createElement("dialog");
@@ -23,8 +23,10 @@ projectsButton.innerHTML = "Projects";
 projectsButton.id = "toprojects";
 projectsButton.href = "/projects";
   
-var contactButton = document.createElement("a");
+//var contactButton = document.createElement("a");
+var contactButton = document.getElementById("contact-me");
 var openDialog = true;
+contactButton.onclick = openContactDialog();
 function openContactDialog(){
   if(openDialog) {
     if(!menuHidden && window.innerWidth >= 700) {
@@ -43,10 +45,9 @@ function confirmContactDialog(){
    } 
 }
 function closeContactDialog(){document.getElementById('contact-dialog').close(); openDialog = false;};
-contactButton.innerHTML = `Contact<dialog id="contact-dialog"> <div id="contact" style="text-align: center;"> <div style="width: 100%; text-align: right;"> <button id="close-contact-dialog">X</button> </div> <h2>Contact Me!</h2> <br> <form action="https://formspree.io/f/mwkgbrzn" method="POST"> <label style="text-decoration: underline;"> Your Name<br> <label><input name="name" style="margin: 10px;" required></input></label> </label> <br><br> <label style="text-decoration: underline;"> Your Email<br> <input type="email" name="email" style="margin: 10px;" required> </label> <br><br> <label style="text-decoration: underline;"> Message<br> <textarea name="message" style="width: 300px; height: 100px; margin: 10px;" required></textarea> </label> <br><br> <button type="submit">Send</button> </form> </div> </dialog>`;
 contactButton.id = "contactme";
 contactButton.href = "javascript:void(0);"
-  
+ /*
 menu.appendChild(homeButton);
 menu.appendChild(document.createElement("br"));
 menu.appendChild(aboutButton);
@@ -111,7 +112,6 @@ if(window.innerWidth >= 700){
   document.getElementsByTagName("body")[0].insertBefore(nonDialogMenu, document.getElementsByTagName("body")[0].children[0]);
   openMenu.hidden = true;
   menuHidden = false;
-  //menuDialog.hidden = true;
 }
 else{
   menuDialog.hidden = false;
@@ -135,7 +135,7 @@ if(window.innerWidth >= 700){
   }
   activateContactButtons();
 });
-
+/*
 homeButton = document.getElementById("tohome");
 homeButton.onclick = function(){
   setTimeout(function(){menuClosing = true}, 1)
@@ -152,3 +152,4 @@ projectsButton.onclick = function(){
 }
     });
 
+*/

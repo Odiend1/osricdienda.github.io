@@ -6,31 +6,61 @@
   <meta name="viewport" content="width=device-width">
   <title>Osric Dienda</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap" rel="stylesheet">
 </head>
 
 <body style="position: absolute;">
-  
+  <div id="background">
+    <canvas id="star-canvas" class="background-canvas"></canvas>
+    <canvas id="planet-canvas" class="background-canvas"></canvas>
+  </div>
+  <div id="background-sheen"></div>
+  <div id="header">
+    <a class="header-link" id="contact-me" href="./contact">Contact</a>
+    <a class="header-link" href="./awards" hidden>Awards</a>
+    <a class="header-link" href="./projects">Projects</a>
+    <a class="header-link" href="./activities" hidden>Activities</a>
+    <a class="header-link" href="./#about">About</a>
+    <button id="menu-button" width="30px" height="30px">
+      <img id="menu-icon" src="./assets/menu_icon.png" alt="Menu" width="20px" height="20px" style="vertical-align: middle;">
+      <button id="close-menu" style="display:none; position:fixed; top: 3%; right: 4%; font-size:20px;">X</button>
+      <div id="menu-content" width="100%" style="text-align:center; position: fixed; z-index: 2; display:none; top: 10%; right: 10%;">
+        <div width="100%" style="position: fixed; top: 10%; right:10%; text-align:center;">
+        <h1 style="font-size:4em;"><a href="./#about" class="menu-link" style="display: block;">About</a></h1><br>
+        <h1 style="font-size:4em;"><a href="./activities" class="menu-link" style="display: block;" hidden>Activities</a></h1><br>
+        <h1 style="font-size:4em;"><a href="./projects" class="menu-link" style="display: block;">Projects</a></h1><br>
+        <h1 style="font-size:4em;"><a href="./awards" class="menu-link" style="display: block;" hidden>Awards</a></h1><br>
+        <h1 style="font-size:4em;"><a href="./contact" class="menu-link" style="display: block;">Contact</a></h1>
+        </div>
+      </div>
+    </button>
+  </div>
   <div id="content">
-  <br>
-  <div id='home'>
   <center>
-    <br>
+  <div id='home'><br>
+  <div style="margin: 10%; width: 80%;">
+    <img style="float:right; margin-right: 5%; max-width:33%; border-radius: 5%; box-shadow: 5px 5px 10px 2px rgba(0, 170, 255, 0.8)" src="./assets/portrait.jpeg" alt ="My portrait" id="portrait">
+    <dialog id="about-me">
+      <img style="float:right; max-width:33%; border-radius: 5%; box-shadow: 5px 5px 10px 2px rgba(0, 170, 255, 0.8)" src="./assets/portrait_extended.jpeg" alt ="My portrait" id="portrait"></dialog>
+  <h1 style="text-align:left; font-size:6vw;">Hello world! </h1>
   <br>
-  <h1>Hello, world! </h1>
-  <br>
-  <h1>My name is <img src="./assets/osric.png" alt ="Osric" width="90px">.</h1> 
-  <br>
-  <h2>Welcome to my website!
-  </h2>
-  </center>
+  <h1 style="text-align:left; font-size: 10vw;">I'm <img src="./assets/osric.png" alt ="Osric" width="25%">.</h1> 
+    <div style="right: 5%; top: 25%;" width="0px" height="0px">
+    </div>
+  <br> 
+    <h4 style="text-align:left; font-size:2.5vw;"></h4>
+  </div>
   </div>
   <br><br><br><br><br>
-    <center><div id="planet" class="center">
+    <center><div id="slideshow" class="center">
       <h2 id="slideshow-h1">Osric's Featured Planet</h2>
       <br>
       <h3 id="slideshow-h2">J1407b</h3>
       <br>
-      <img id="slideshow-image" src="./blog/planets/J1407b/j1407b.jpg" class="center planet container" style="border: 1px white solid; padding: 0;">
+      <img id="slideshow-image" src="./blog/planets/J1407b/j1407b.jpg" class="center slideshow container" style="border: 1px white solid; padding: 0;">
       <br>
       <a id="learn-more" href="./blog/planets/J1407b/"><button>Learn More</button></a>
     </div>
@@ -48,17 +78,15 @@
     <br>
     <br>
     <h1>About Me</h1><br>
-    <p id="abouttext">Hello! I'm Osric Dienda, a student at STISD Science Academy. I have big dreams and will persevere through anything in order to make a difference!<br><br>
-      I am particularly interested in the fields of science and technology, with a focus on computer science and astrophysics.<br><br>
-      I've worked on a vast array of projects, and after I refine them for public use, I will publish them on this website.</p>
+    <p id="abouttext">Hey there, I’m Osric Dienda. I’m a junior at South Texas ISD Science Academy. I’m an aspiring astrophysicist and a computer science enthusiast. I enjoy testing my knowledge across STEM fields in competitions such as Science Bowl, where my team won the regional championships, Science Olympiad, where my team achieved my school’s highest state-level Astronomy placement in over 30 years, and UIL, where I’ve accumulated 19 invitational trophies and medals across Science, Math, and Computer Science events.<br><br>I also love to engage with and serve my community both in and out of school. I am currently the president of my school’s Astronomy Club and Physics Club, and I currently serve as the vice president of the McAllen Public Library’s Teen Advisory Committee. I'm definitely not done yet, though! You can continue to follow along with my academic journey here on <a href="https://osricdienda.com" class="static-hyperlink">osricdienda.com</a>.</p>
     <br>
-      <a href="/projects"><h5 class="hyperlink">View My Available Projects</h5></a>
     <br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br>
     <div style="text-align: center;">
       <h4>Contact Me!</h4>
-    <button class="hyperlink" id="mail-button" style="background-color: transparent; border: none; text-decoration: underline;"><img src="/assets/email_icon.png" width=40px height=40px></button>
+    <button class="hyperlink" id="mail-button" style="background-color: transparent; border: none; text-decoration: underline;"><img src="./assets/email_icon.png" width=40px height=40px></button>
     </div>
+    <dialog id="contact-dialog"> <div id="contact" style="text-align: center;"> <div style="width: 100%; text-align: right;"> <button id="close-contact-dialog">X</button> </div> <h2>Contact Me!</h2> <br> <form action="https://formspree.io/f/mwkgbrzn" method="POST"> <label style="text-decoration: underline;"> Your Name<br> <label><input name="name" style="margin: 10px;" required></input></label> </label> <br><br> <label style="text-decoration: underline;"> Your Email<br> <input type="email" name="email" style="margin: 10px;" required> </label> <br><br> <label style="text-decoration: underline;"> Message<br> <textarea name="message" style="width: 300px; height: 100px; margin: 10px;" required></textarea> </label> <br><br> <button type="submit">Send</button> </form> </div> </dialog>
     <hr>
     <p>↑ ↑ ↓ ↓ ← → ← → B A</p>
 
@@ -66,8 +94,10 @@
     <br>
   
   </div>
+  </center>
+  </div>
   <script src="script.js"></script>
-  <script src="/menu.js"></script>
+  <script src="./menu.js"></script>
 </body>
 
 </html>

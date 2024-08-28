@@ -1,28 +1,158 @@
+:root{
+  --text-color: #fff;
+  --gradient-background-color: linear-gradient(150deg,  #0a0a0b, #282525);
+  --gradient-background-color-2: linear-gradient(150deg, #323b48, #0f0f0f);
+  --gradient-background-color-3: linear-gradient(150deg,  #5e5e5e, #2e2e2e);
+  --gradient-background-color-4: linear-gradient(150deg,  #163274, #001d33);
+  --gradient-background-color-5: linear-gradient(150deg, #74a1c8 0%, #2d80c8 100%);
+  --sheen-gradient: linear-gradient(150deg, rgba(0,0,0,0) 0%,  rgba(0,0,0,0) 5.5%, #0f0 6%, rgba(0,0,0,0) 7%, rgba(0,0,0,0) 10.5%, #f0f 11%, rgba(0,0,0,0) 12%, rgba(0,0,0,0) 15.5%, #ff0 16%, rgba(0,0,0,0) 17%, rgba(0,0,0,0) 20.5%, #0f0 21%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 25.5%, #f0f 26%, rgba(0,0,0,0) 27%, rgba(0,0,0,0) 30.5%, #ff0 31%, rgba(0,0,0,0) 32%, rgba(0,0,0,0) 35.5%, #0f0 36%, rgba(0,0,0,0) 37%, rgba(0,0,0,0) 40.5%, #f0f 41%, rgba(0,0,0,0) 42%, rgba(0,0,0,0) 45.5%, #ff0 46%, rgba(0,0,0,0) 47%, rgba(0,0,0,0) 50.5%, #0f0 51%, rgba(0,0,0,0) 52%, rgba(0,0,0,0) 55.5%, #f0f 56%, rgba(0,0,0,0) 57%, rgba(0,0,0,0) 60.5%, #ff0 61%, rgba(0,0,0,0) 62%, rgba(0,0,0,0) 65.5%, #0f0 66%, rgba(0,0,0,0) 67%, rgba(0,0,0,0) 70.5%, #f0f 71%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 75.5%, #ff0 76%, rgba(0,0,0,0) 77%, rgba(0,0,0,0) 80.5%, #0f0 81%, rgba(0,0,0,0) 82%, rgba(0,0,0,0) 85.5%, #f0f 86%, rgba(0,0,0,0) 87%, rgba(0,0,0,0) 90.5%, #ff0 91%, rgba(0,0,0,0) 92%, rgba(0,0,0,0) 95.5%, #0f0 96%, rgba(0,0,0,0) 97%, rgba(0,0,0,0) 100%);
+  --solid-background-color: #242424;
+}
+
 html, body{
   height:100%;
   width:100%;
   margin:0;
   padding:0;
-  background-color: #242424;
+}
+
+body {
+  font-family: 'Schibsted Grotesk';
+  font-weight: 400;
+}
+
+#background{
+  z-index: -1;
+  position: fixed;
+  background: var(--gradient-background-color);
+  width: 100%;
+  height: 100%;
+}
+
+#background-sheen{
+  z-index: -1;
+  position: fixed;
+  background: var(--sheen-gradient);
+  opacity: 0.01; /* 0.075 with grey-ish background */
+  width: 100%;
+  height: 100%;
+}
+
+.background-canvas{
+  position: fixed;
+}
+
+#planet-canvas{
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Varela Round";
+  font-weight: 700;
 }
 
 h1, h2, h3, h4, h5, h6, p, label{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
   margin: 0;
-  color: white;
+  color: var(--text-color);
   text-align: center;
 }
 
 button{
-  background-color: black;
+  background-color: #121212;
   color: white;
-  border: 1px solid gold;
+  border: 1px solid white;
+  border-radius: 4px;
   min-height: 30px;
   width: auto;
 }
 
 button:hover{
   cursor: pointer;
+}
+
+@keyframes expandMenu{
+  0%{
+    right: 0;
+    position: fixed;
+    width: 30px;
+    height: 30px;
+  }
+  100%{
+    top: -10%;
+    right: -10%;
+    position: fixed;
+    border-radius: 2px;
+    /*width: 96.5%;
+    height: 98.5%;*/
+    width: 120%;
+    height: 120%;
+    background: var(--gradient-background-color);
+  }
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.expand-menu{
+  animation: expandMenu 1s forwards;
+}
+
+.fade-in{
+  animation: fadeIn 1s forwards;
+}
+
+#header{
+  width: 100%;
+  position: fixed;
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px) contrast(0%);
+}
+
+.header-link{
+  display: none;
+  float: right;
+  margin: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-link:visited{
+  color: #fff;
+}
+
+.header-link:hover{
+  color:#ffdd00;
+}
+
+.menu-link{
+  float: right;
+  margin: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-link:visited{
+  color: #fff;
+}
+
+.menu-link:hover{
+  color:#00e1ff;
+}
+
+#menu-button{
+  border-radius: 30px;
+  text-align: center;
+  margin: 10px;
+  display: none;
+  float: right;
 }
 
 #open-menu{
@@ -105,22 +235,27 @@ button:hover{
 
 #content{
   /*margin-left: 12.5%;*/
-  background-color: #242424;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 #about{
-  background-color: #393939;
   padding-left: 18%;
   padding-right: 18%;
+}
+
+#about-me{
+  background: var(--gradient-background-color-3);
 }
 
 #abouttext{
   padding-left: 7.5%;
   padding-right: 7.5%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 dialog{
@@ -143,17 +278,27 @@ dialog{
   border-bottom: #7805d6;
 }
 
-.planet{
+.static-hyperlink{
+  color: #0080ff;
+  border-bottom: #0544d6;
+}
+
+.slideshow{
   max-width: 75%;
   height: auto;
   border: 1px solid white;
+  border-radius: 8px;
 }
 
-#planet{
+#slideshow{
   border: 1px solid white;
+  border-radius: 20px;
   padding-top: 12px;
   padding-bottom: 12px;
   display: inline-block;
+  background: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .slideshow-ui-div {
