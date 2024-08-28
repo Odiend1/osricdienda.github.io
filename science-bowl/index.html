@@ -33,7 +33,7 @@
       <div id="scibowl-pictures" class="hcg-slider" height="100px">
         <div class="hcg-slide-container">
         <div class="hcg-slider-body">
-          <a class="hcg-slides animated" style="display:flex" target="_blank">
+          <a class="hcg-slides animated" style="display:flex">
             <span class="hcg-slide-number">1/7</span>
             <img src="/assets/scibowl_regional_win.jpg" alt="Science Bowl Regional Win">
             <span class="hcg-slide-text">Regional Win</span>
@@ -54,37 +54,37 @@
     {
         "url": "/assets/scibowl_regional_win.jpg",
         "alt": "Science Bowl Regional Win",
-        "link": "https://www.instagram.com/p/C3L-AlMuuZ1/"
+        "link": "javascript: void(0);" // "https://www.instagram.com/p/C3L-AlMuuZ1/"
     },
     {
         "url": "/assets/scibowl_regional_trophy.jpg",
         "alt": "Me holding the Science Bowl regional trophy",
-        "link": "https://www.instagram.com/p/C3L-AlMuuZ1/?img_index=3"
+        "link": "javascript: void(0);" // "https://www.instagram.com/p/C3L-AlMuuZ1/?img_index=3"
     },
     {
         "url": "/assets/scibowl_team_competition.jpg",
         "alt": "Me and my team competing",
-        "link": "https://www.flickr.com/photos/nationalsciencebowl/53685112699/in/photolist-2pMXuSK-2pMYeDn-2pME7eE-2pN1fDi-2pMveuu/"
+        "link": "javascript: void(0);" // "https://www.flickr.com/photos/nationalsciencebowl/53685112699/in/photolist-2pMXuSK-2pMYeDn-2pME7eE-2pN1fDi-2pMveuu/"
     },
     {
         "url": "/assets/scibowl_high_five.jpg",
         "alt": "Me \"high-fiving\" Adi, my teammate",
-        "link": "https://www.flickr.com/photos/nationalsciencebowl/53684968823/in/photolist-2pMXuSK-2pMYeDn-2pME7eE-2pN1fDi-2pMveuu/"
+        "link": "javascript: void(0);" // "https://www.flickr.com/photos/nationalsciencebowl/53684968823/in/photolist-2pMXuSK-2pMYeDn-2pME7eE-2pN1fDi-2pMveuu/"
     },
     {
         "url": "/assets/scibowl_team_challenge.jpg",
         "alt": "Me and my team in the team challenge",
-        "link": "https://www.flickr.com/photos/nationalsciencebowl/53681575760/in/photolist-2pMXuSK-2pMYeDn-2pME7eE-2pN1fDi-2pMveuu/"
+        "link": "javascript: void(0);" // "https://www.flickr.com/photos/nationalsciencebowl/53681575760/in/photolist-2pMXuSK-2pMYeDn-2pME7eE-2pN1fDi-2pMveuu/"
     },
     {
         "url": "/assets/scibowl_national_team.jpg",
         "alt": "My team and coaches",
-        "link": "https://www.flickr.com/photos/nationalsciencebowl/53679844160/in/photolist-2pMXuSK-2pMYeDn-2pME7eE-2pN1fDi-2pMveuu/"
+        "link": "javascript: void(0);" // "https://www.flickr.com/photos/nationalsciencebowl/53679844160/in/photolist-2pMXuSK-2pMYeDn-2pME7eE-2pN1fDi-2pMveuu/"
     },
     {
         "url": "/assets/scibowl_stage.jpg",
         "alt": "The Science Bowl stage",
-        "link": "https://twitter.com/DOE_SC_NSB/status/1784914133374091418/photo/1"
+        "link": "javascript: void(0);" // "https://twitter.com/DOE_SC_NSB/status/1784914133374091418/photo/1"
     }
       ];
 
@@ -97,7 +97,7 @@
       for (let i = 0; i < images_list.length; i++) {
         // if no link without href="" tag
         let href = (images_list[i].link == "" ? "":' href="'+images_list[i].link+'"');
-        images_div += '<a'+href+' class="hcg-slides animated"'+(i === 0 ? ' style="display:flex"':'')+' target="_blank">'+
+        images_div += '<a'+href+' class="hcg-slides animated"'+(i === 0 ? ' style="display:flex"':'')+'>'+
                 '<span class="hcg-slide-number">'+(i+1)+'/'+images_list.length+'</span>'+
                 '<img src="'+images_list[i].url+'" alt="'+images_list[i].name+'"></a>';
         dots_div += '<a href="#" class="hcg-slide-dot'+(i === 0 ? ' dot-active':'')+'" data-id="'+i+'"></a>';
