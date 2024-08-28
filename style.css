@@ -256,6 +256,8 @@ button:hover{
   padding-right: 7.5%;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  z-index: -1;
 }
 
 dialog{
@@ -296,6 +298,8 @@ dialog{
   padding-top: 12px;
   padding-bottom: 12px;
   display: inline-block;
+  position: relative;
+  z-index: -1;
   background: none;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);

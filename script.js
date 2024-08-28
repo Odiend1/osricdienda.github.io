@@ -192,8 +192,10 @@ menuButton.onclick = function(){
     closeMenuButton.style.display = "inline-block";
     document.getElementById("content").style.overflowY = "hidden";
     setTimeout(function(){
-      menuContent.classList.add("fade-in");
-      menuContent.style.display = "block";
+      if(menuButton.classList.contains("expand-menu")){
+        menuContent.classList.add("fade-in");
+        menuContent.style.display = "block";
+      }
     }, 1000)
   }
   reEnableScrolling();
@@ -231,7 +233,7 @@ for(var i = 0; i < menuLinks.length; i++){
      document.getElementById("header").style.webkitBackdropFilter = "blur(1px)";
      headerLinks = document.getElementsByClassName("header-link");
      for(var i = 0; i < headerLinks.length; i++){
-       headerLinks.item(i).style.display = "inline-block";
+       if(headerLinks.item(i).innerHTML !== "Activities" && headerLinks.item(i).innerHTML !== "Awards") headerLinks.item(i).style.display = "inline-block";
      }
    }
    else{
