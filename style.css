@@ -22,7 +22,7 @@ body {
 }
 
 #background{
-  z-index: -1;
+  z-index: -99;
   position: fixed;
   background: var(--gradient-background-color);
   width: 100%;
@@ -30,7 +30,7 @@ body {
 }
 
 #background-sheen{
-  z-index: -1;
+  z-index: -99;
   position: fixed;
   background: var(--sheen-gradient);
   opacity: 0.01; /* 0.075 with grey-ish background */
@@ -254,10 +254,6 @@ button:hover{
 #abouttext{
   padding-left: 7.5%;
   padding-right: 7.5%;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  position: relative;
-  z-index: -1;
 }
 
 dialog{
@@ -298,11 +294,6 @@ dialog{
   padding-top: 12px;
   padding-bottom: 12px;
   display: inline-block;
-  position: relative;
-  z-index: -1;
-  background: none;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 }
 
 .slideshow-ui-div {
