@@ -4,6 +4,10 @@ html {
 }
 
 td{
+  /* width: 2.7vw;
+  height: 2.7vw;
+  min-width: 2%;
+  max-width: 3%; */
   width: 30px;
   height: 30px;
   text-align: center;
@@ -20,7 +24,12 @@ td{
   border: none
 }
 
+/* .element-symbol{
+  font-size: 1.5vw;
+} */
+
 .atomic-number{
+  /* font-size: 0.75vw; */
   font-size: 8px;
   position: absolute;
   top: 0px;
@@ -46,6 +55,18 @@ input:focus{
   text-align: left;
   margin: 0 auto;
   display: inline-block;
+}
+
+#random-element-min, #random-element-max{
+  text-align: center;
+  border: inset;
+}
+
+#random-range-div{
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 1px;
 }
 
 #game-info{
