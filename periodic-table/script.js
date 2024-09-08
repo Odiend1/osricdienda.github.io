@@ -190,9 +190,6 @@ gameInput.addEventListener('input', function(){
           elementCells.item(elNum).style.filter = "saturate(1000%)";
         }, i*10);
       }
-      setTimeout(function(){
-        document.body.innerHTML.append += `<script src="https://run.confettipage.com/here.js" data-confetticode="U2FsdGVkX1+ignqi7OK4M1psB2Am0PQY98yDsCb1KXpk+tDyAenMc1AFKo5gT+SXNX6posrD8j5ltwVy8/S+k7gY+7DqchSUW/hmmHbpiBgpUYSNUw21h1bjbywE8HkO8vub/ESPiN/ZafRoSwo3SkQYr9TG2XruPsN/BwXnn2NIRVU1O0U21MHDUSFNLVNwvjLQIWdm87Z6qFtaGQCzrYXAbOBUBsCI/k0e7aYTSX6csB0UFZnboWL2PmxbGj3z7zUEEQC0SI2cwk3yBQzX3QYmSOtN+rGcA2Uwb7Zyvq/OxzB0pJtGCbTZp2a80dGkQ/jnKjmgx71WB0eAbe/lZgbOyyulYu6kNi8Zv4pWerj2dE4cZu8us536aB7KOiaeEqEjIGfm/VZasjtUiKgKWP5d0wdNAMEHYR3z2zmFZhT9OYkZCTRVx/YNuNoeGe4HsBsDdvO3cg8yG9/cR2HSayzlpdaAZYrw731FPCsomupG2o/zYOrg7iJ5w1NX3DWPsK+T1d9v4CAkQ92AQWI2c4BxQHeazoy0q0cHNyuh8V6yr3hp/FhJ2X6W+/G3bauP4NidQ0oHlqMJOVCck+HprTutNSQurhnC+FSc7RetT9/usidSyv6mKlZ/9mH4xac8+7K/8o2N/RzhWKtFDmeIi+zgzRGAA+uuxlFqjGcgGDCfCHxzn8PVQ7l5PPC+yC70"></script>`;
-      }, 1180)
     }
     else{
       if(settings.requireElementsInOrder || settings.randomElements) document.getElementById("element-" + currentElementNumber).classList.add("highlighted-cell");
