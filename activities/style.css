@@ -16,12 +16,22 @@
   border-top-right-radius: 20px;
 }
 
-.activity-image{
+.activity-image-container{
   width: 400px;
+  height: 280px;
+  overflow: hidden;
+}
+
+.activity-image{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .activity-description{
   width: 380px;
   height: 180px;
   margin: 10px;
+  line-height: 1.3;
 }

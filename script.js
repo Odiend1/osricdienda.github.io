@@ -233,7 +233,7 @@ for(var i = 0; i < menuLinks.length; i++){
      document.getElementById("header").style.webkitBackdropFilter = "blur(1px)";
      headerLinks = document.getElementsByClassName("header-link");
      for(var i = 0; i < headerLinks.length; i++){
-       if(headerLinks.item(i).innerHTML !== "Activities" && headerLinks.item(i).innerHTML !== "Awards") headerLinks.item(i).style.display = "inline-block";
+       if(headerLinks.item(i).innerHTML !== "Awards") headerLinks.item(i).style.display = "inline-block";
      }
    }
    else{
