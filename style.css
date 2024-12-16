@@ -132,6 +132,13 @@ button:hover{
   color:#ffdd00;
 }
 
+#logo{
+  padding-top: 14px;
+  padding-left: 16px;
+  opacity: 0;
+}
+
+
 .menu-link{
   float: right;
   margin: 15px;
@@ -254,6 +261,7 @@ button:hover{
 #abouttext{
   padding-left: 7.5%;
   padding-right: 7.5%;
+  font-size: 1.1em;
 }
 
 dialog{

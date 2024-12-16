@@ -7,6 +7,7 @@ console.log("    ___           _        ____  _                _       " + "\n" 
 var content = document.getElementById('content');
 var codeNum = 0;
 var body = document.getElementsByTagName("body")[0];
+const d = new Date();
 
 /*var portrait = document.getElementById("portrait");
 portrait.onclick = function(){
@@ -226,6 +227,10 @@ for(var i = 0; i < menuLinks.length; i++){
   }
 }
 
+window.addEventListener("scroll", function(event){
+  document.getElementById("logo").style.opacity = Math.min((window.scrollY-280)/105, 1);
+})
+
  function headerFormat(){
    if(window.innerWidth >= 700){
      menuButton.style.display = "none";
@@ -370,3 +375,5 @@ document.onkeydown = function (e) {
     }
   }
 };
+
+document.getElementById("year").innerHTML = d.getFullYear();
