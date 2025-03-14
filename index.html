@@ -105,15 +105,17 @@
   <script src="script.js"></script>
   <script src="./menu.js"></script>
   <script>
-    if(window.location.href.includes("onrender")){
-      Array.from(document.getElementsByClassName("menu-link")).forEach((link) => {
-        if(link.innerHTML.toLowerCase() === "projects") link.style.display = "none";
-      });
-      Array.from(document.getElementsByClassName("header-link")).forEach((link) => {
-        if(link.innerHTML.toLowerCase() === "projects") link.style.display = "none";
-      });
-      document.getElementById("elevator-pitch").hidden = false;
-    }
+    document.addEventListener("DOMContentLoaded", function(){
+      if(window.location.href.includes("onrender")){
+        Array.from(document.getElementsByClassName("menu-link")).forEach((link) => {
+          if(link.innerHTML.toLowerCase() === "projects") link.style.display = "none";
+        });
+        Array.from(document.getElementsByClassName("header-link")).forEach((link) => {
+          if(link.innerHTML.toLowerCase() === "projects") link.style.display = "none";
+        });
+        document.getElementById("elevator-pitch").hidden = false;
+      }
+    })
   </script>
 </body>
 
