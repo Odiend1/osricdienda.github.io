@@ -82,8 +82,8 @@
     <p><span style="color: rgb(0, 214, 238)">Leader</span> • <span style="color: yellow">Competitor</span> • <span style="color: rgb(69, 142, 251)">Scholar</span></p><br>
     <p id="abouttext">Hey there, I’m Osric Dienda. I’m a junior at South Texas ISD Science Academy. I’m an aspiring astrophysicist and a computer science enthusiast. I enjoy testing my knowledge across STEM fields in competitions such as Science Bowl, where my team won the regional championships, and Science Olympiad, where we achieved my school’s highest state-level Astronomy placement in over 30 years. I also compete in the University Interscholastic League (UIL), where I have accumulated 30 invitational trophies and medals across the Science, Math, and Computer Science events.<br><br>I also love to engage with and serve my community both in and out of school. I am currently the president of my school’s Astronomy Club and Physics Club, and I currently serve as the vice president of the McAllen Public Library’s Teen Advisory Committee. I'm definitely not done yet, though! You can continue to follow along with my academic journey here on <a href="https://osricdienda.com" class="static-hyperlink">osricdienda.com</a>.</p>
     <br>
-    <br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><iframe id="elevator-pitch" hidden width="560" height="315" src="https://www.youtube.com/embed/rlKzJg1neVQ?si=ogxf-HMQXNGjXADg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br><br><br><br><br>
+    <br><br>
     <div style="text-align: center;">
       <h4>Contact Me!</h4>
     <a href="./contact/" class="hyperlink" id="mail-button" style="background-color: transparent; border: none; text-decoration: underline;"><img src="./assets/email_icon.png" width=40px height=40px></a>
@@ -104,6 +104,17 @@
   </div>
   <script src="script.js"></script>
   <script src="./menu.js"></script>
+  <script>
+    if(window.location.href.includes("onrender")){
+      Array.from(document.getElementsByClassName("menu-link")).forEach((link) => {
+        if(link.innerHTML.toLowerCase() === "projects") link.style.display = "none";
+      });
+      Array.from(document.getElementsByClassName("header-link")).forEach((link) => {
+        if(link.innerHTML.toLowerCase() === "projects") link.style.display = "none";
+      });
+      document.getElementById("elevator-pitch").hidden = false;
+    }
+  </script>
 </body>
 
 </html>
