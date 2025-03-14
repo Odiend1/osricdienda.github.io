@@ -14,7 +14,7 @@ ssp.onclick = function(){
 
 var osmosis = document.getElementById('osmosis');
 osmosis.onclick = function(){
-  window.location.href = "./osmosis/"
+  window.location.href = "/projects/osmosis/"
 }
 
 var messier = document.getElementById('messier-api');
