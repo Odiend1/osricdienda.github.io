@@ -106,7 +106,7 @@
   <script src="./menu.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
-      if(window.location.href.includes("onrender")){
+      if(window.location.href.includes("onrender") || window.location.href.includes("netlify")){
         Array.from(document.getElementsByClassName("menu-link")).forEach((link) => {
           if(link.innerHTML.toLowerCase() === "projects") link.style.display = "none";
         });
