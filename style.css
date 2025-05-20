@@ -29,6 +29,15 @@ body {
   height: 100%;
 }
 
+#background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at bottom, rgba(0, 0, 40, 0.4), rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+  opacity: 0.1;
+}
+
 #background-sheen{
   z-index: -99;
   position: fixed;
@@ -57,6 +66,53 @@ h1, h2, h3, h4, h5, h6, p, label{
   margin: 0;
   color: var(--text-color);
   text-align: center;
+}
+
+h1, h2, h3{
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+#subtitle{
+  text-align:left;
+  font-size: clamp(2rem, 5vw, 5rem);
+  margin-top: 0.5em;
+}
+
+#title{
+  text-align:left;
+  font-size: clamp(3rem, 9vw, 9rem);
+  margin: 0;
+}
+
+.highlight{
+  background: linear-gradient(90deg, #18e0ff 0%, #4393fd 30%, #0178ff 50%, #18d5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300%;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 10s ease-in-out infinite;
+}
+
+.hover-char{
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  transition: filter 0.3s ease;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 button{

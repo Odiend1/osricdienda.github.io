@@ -90,7 +90,7 @@ window.addEventListener("load", (event) => {
   starCanvas.height = document.body.getBoundingClientRect().height;
   planetCanvas.width = document.body.getBoundingClientRect().width;
   planetCanvas.height = document.body.getBoundingClientRect().height;
-  loadBackgroundStars();
+  //loadBackgroundStars();
 })
 
 addEventListener("resize", (event) => {
@@ -98,7 +98,7 @@ addEventListener("resize", (event) => {
   starCanvas.height = window.innerHeight;
   planetCanvas.width = document.body.getBoundingClientRect().width;
   planetCanvas.height = document.body.getBoundingClientRect().height;
-  loadBackgroundStars();
+  //loadBackgroundStars();
 })
 
 var slideshow = document.getElementById('slideshow');

@@ -10,12 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Varela+Round&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 
 <body style="position: absolute;">
   <div id="background">
-    <canvas id="star-canvas" class="background-canvas"></canvas>
-    <canvas id="planet-canvas" class="background-canvas"></canvas>
+    <canvas id="star-canvas" class="background-canvas" hidden></canvas>
+    <canvas id="planet-canvas" class="background-canvas" hidden></canvas>
   </div>
   <div id="background-sheen"></div>
   <div id="header">
@@ -46,9 +48,9 @@
     <img style="float:right; margin-right: 5%; max-width:33%; border-radius: 5%; box-shadow: 5px 5px 10px 2px rgba(0, 170, 255, 0.8)" src="./assets/portrait.jpeg" alt ="My portrait" id="portrait">
     <dialog id="about-me">
       <img style="float:right; max-width:33%; border-radius: 5%; box-shadow: 5px 5px 10px 2px rgba(0, 170, 255, 0.8)" src="./assets/portrait_extended.jpeg" alt ="My portrait" id="portrait"></dialog>
-  <h1 style="text-align:left; font-size:6vw;">Hello world! </h1>
+  <h1 id="subtitle">Hello world! </h1>
   <br>
-  <h1 style="text-align:left; font-size: 10vw;">I'm <img src="./assets/osric.png" alt ="Osric" width="25%">.</h1> 
+  <h1 id="title">I<span style="font-family: 'Varela Round';">'</span>m <span class="highlight"><span class="hover-char">O</span><span class="hover-char">s</span><span class="hover-char">r</span><span class="hover-char">i</span><span class="hover-char">c</span></span>.</h1> 
     <div style="right: 5%; top: 25%;" width="0px" height="0px">
     </div>
   <br> 
@@ -104,6 +106,7 @@
   </div>
   <script src="script.js"></script>
   <script src="./menu.js"></script>
+  <script src="particles.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
       if(window.location.href.includes("onrender") || window.location.href.includes("netlify")){
