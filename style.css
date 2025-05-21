@@ -94,15 +94,6 @@ h1, h2, h3{
   animation: shimmer 10s ease-in-out infinite;
 }
 
-.hover-char{
-  display: inline-block;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  transition: filter 0.3s ease;
-}
-
 @keyframes shimmer {
   0% {
     background-position: 0% 50%;

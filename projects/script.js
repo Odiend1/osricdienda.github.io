@@ -22,6 +22,11 @@ messier.onclick = function(){
   window.location.href = "/messier-api/"
 }
 
+var nasaHunch = document.getElementById('nasa-hunch');
+nasaHunch.onclick = function(){
+  window.location.href = "https://sites.google.com/view/phaseai/home"
+}
+
 var width;
 var height;
 
@@ -33,6 +38,7 @@ function resizeContainers(){
   ssp.style.width = parseInt(width.slice(0, -2)) * 0.75 + "px";
   osmosis.style.width = parseInt(width.slice(0, -2)) * 0.75 + "px";
   messier.style.width = parseInt(width.slice(0, -2)) * 0.75 + "px";
+  nasaHunch.style.width = parseInt(width.slice(0, -2)) * 0.75 + "px";
 }
 
 addEventListener("DOMContentLoaded", function(event) {
