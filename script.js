@@ -280,7 +280,7 @@ window.addEventListener("resize", (event) => {
   catch(e){}
 });
 
-var slides = [{h1: "Osric's Featured Planet", h2: "J1407b", image: "./blog/planets/J1407b/j1407b.jpg", href: "./blog/planets/J1407b/"},  {h1: "National Science Bowl", h2: "Regional Champion and National Competitor", image: "./assets/scibowl_stage.jpg", href: "./science-bowl/"}, {h1: "Messier Catalog API", h2: "Complete data and images for all 110 Messier objects.", image: "./messier-api/images/M31.jpg", href: "./messier-api/"}, {h1: "Superscript+", h2: "TX District 15 Congressional App Challenge Winner", image: "./superscript+/Superscript+ Updated Simple.png", href: "./superscript+/"}]
+var slides = [{h1: "Osric's Featured Planet", h2: "J1407b", image: "./blog/planets/J1407b/j1407b.jpg", href: "./blog/planets/J1407b/"}, {h1: "Summer Science Program (SSP)", h2: "International Research Program in Astrophysics", image: "./assets/ssp25.jpg", href: "./ssp/"}, {h1: "National Science Bowl", h2: "Regional Champion and National Competitor", image: "./assets/scibowl_stage.jpg", href: "./science-bowl/"}, {h1: "Messier Catalog API", h2: "Complete data and images for all 110 Messier objects.", image: "./messier-api/images/M31.jpg", href: "./messier-api/"}, {h1: "Superscript+", h2: "TX District 15 Congressional App Challenge Winner", image: "./superscript+/Superscript+ Updated Simple.png", href: "./superscript+/"}]
 if(window.innerWidth < 541) slides[0].h2 += "<br>&nbsp;";
 var slideshowH1 = document.getElementById("slideshow-h1");
 var slideshowH2 = document.getElementById("slideshow-h2");
