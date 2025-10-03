@@ -24,7 +24,7 @@ messier.onclick = function(){
 
 var nasaHunch = document.getElementById('nasa-hunch');
 nasaHunch.onclick = function(){
-  window.location.href = "https://sites.google.com/view/phaseai/home"
+  window.open("https://sites.google.com/view/phaseai/home", '_blank').focus();
 }
 
 var width;
