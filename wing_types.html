@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aircraft Wing Types - Educational Analysis</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); padding: 20px; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; }
+.header { text-align: center; margin-bottom: 40px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.header h1 { color: #1e3a8a; font-size: 2.5em; margin-bottom: 10px; }
+.header p { color: #1e40af; font-size: 1.2em; }
+.stall-principle { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: left; }
+.stall-principle h3 { color: #78350f; margin-bottom: 10px; font-size: 1.2em; }
+.stall-principle p { color: #78350f; }
+.wing-card { background: white; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 2px solid #93c5fd; overflow: hidden; }
+.wing-header { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
+.wing-header:hover { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
+.wing-header h2 { font-size: 1.5em; margin: 0; }
+.arrow { font-size: 1.5em; transition: transform 0.3s; }
+.wing-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%); }
+.wing-content.active { max-height: 2000px; transition: max-height 0.6s ease-in; }
+.content-inner { padding: 30px; }
+.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+@media (max-width: 768px) { .two-column { grid-template-columns: 1fr; } }
+.pros-section, .cons-section { padding: 20px; border-radius: 8px; border: 2px solid; }
+.pros-section { background: #f0fdf4; border-color: #86efac; }
+.cons-section { background: #fef2f2; border-color: #fca5a5; }
+.pros-section h3 { color: #166534; margin-bottom: 15px; font-size: 1.2em; }
+.cons-section h3 { color: #991b1b; margin-bottom: 15px; font-size: 1.2em; }
+.pros-section ul, .cons-section ul { list-style: none; padding-left: 0; }
+.pros-section li, .cons-section li { padding: 8px 0; padding-left: 20px; position: relative; }
+.pros-section li:before { content: "✓"; position: absolute; left: 0; color: #166534; font-weight: bold; }
+.cons-section li:before { content: "✗"; position: absolute; left: 0; color: #991b1b; font-weight: bold; }
+.applications-section { background: #eff6ff; padding: 20px; border-radius: 8px; border: 2px solid #93c5fd; margin-bottom: 20px; }
+.applications-section h3 { color: #1e3a8a; margin-bottom: 10px; font-size: 1.2em; }
+.why-section { background: #fffbeb; padding: 20px; border-radius: 8px; border: 2px solid #fcd34d; }
+.why-section h3 { color: #78350f; margin-bottom: 10px; font-size: 1.2em; }
+.key-considerations { background: #dbeafe; padding: 30px; border-radius: 10px; border: 2px solid #60a5fa; margin-top: 30px; }
+.key-considerations h3 { color: #1e3a8a; margin-bottom: 15px; font-size: 1.3em; }
+.key-considerations ul { list-style: none; padding-left: 0; }
+.key-considerations li { padding: 8px 0; color: #1e3a8a; }
+.key-considerations strong { color: #1e40af; }
+.expand-all-btn { background: #3b82f6; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-size: 1em; cursor: pointer; margin-bottom: 20px; transition: background 0.3s; }
+.expand-all-btn:hover { background: #2563eb; }
+.category-header { color: white; padding: 15px 25px; font-size: 1.3em; font-weight: bold; margin-top: 30px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+.category-low-speed { background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); }
+.category-transonic { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
+.category-supersonic { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
+.category-multi { background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%); }
+.category-specialized { background: linear-gradient(135deg, #4b5563 0%, #374151 100%); }
+.stall-location { background: #fff7ed; border-left: 4px solid #f97316; padding: 15px; margin-bottom: 25px; border-radius: 6px; }
+.stall-location h4 { color: #9a3412; margin-bottom: 8px; font-size: 1.1em; }
+.stall-location p { color: #9a3412; }
+.reasoning-section { background: #faf5ff; padding: 20px; border-radius: 8px; border: 2px solid #d8b4fe; margin-top: 15px; }
+.reasoning-section h3 { color: #581c87; margin-bottom: 10px; font-size: 1.2em; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>✈️ Aircraft Wing Types</h1>
+<p>Comprehensive Analysis of Pros, Cons & Applications</p>
+<div class="stall-principle">
+<h3>🎯 Stall Location Principle:</h3>
+<p><strong>IDEAL:</strong> Stall should begin at the wing root and progress outward toward the tips. This preserves aileron control during stall recovery, allowing the pilot to maintain lateral control. Tip-first stalls are dangerous because they can cause sudden wing drops and loss of control authority.</p>
+</div>
+</div>
+
+<button class="expand-all-btn" onclick="toggleAll()">Expand All / Collapse All</button>
+
+<div class="category-header category-low-speed">Low Speed (Subsonic)</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Straight Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="stall-location">
+<h4>📍 Stall Location & Behavior:</h4>
+<p><strong>Root First (IDEAL)</strong> - Stall begins at wing root, allowing aileron control at tips during stall recovery</p>
+</div>
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Simple to design and manufacture</li>
+<li>Lower production costs</li>
+<li>Excellent low-speed handling</li>
+<li>Good structural efficiency</li>
+<li>Predictable stall characteristics</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>High drag at transonic speeds</li>
+<li>Limited maximum speed</li>
+<li>Poor supersonic performance</li>
+<li>Lower critical Mach number</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>General aviation aircraft, trainers, light sport aircraft, agricultural planes, early commercial aircraft (DC-3, Cessna 172)</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>The simplicity and excellent low-speed characteristics make straight wings ideal for aircraft that prioritize ease of handling, short takeoff distances, and economical operation over high-speed performance.</p>
+</div>
+<div class="reasoning-section">
+<h3>🎓 Educational Reasoning</h3>
+<p>Best for flight training and recreational flying where safety and predictability are paramount.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Tapered Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="stall-location">
+<h4>📍 Stall Location & Behavior:</h4>
+<p><strong>Tip Tendency (REQUIRES MITIGATION)</strong> - Natural tendency to stall at tips first due to reduced chord; requires washout or stall strips</p>
+</div>
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Reduced induced drag compared to straight wings</li>
+<li>Lower structural weight</li>
+<li>Better lift distribution</li>
+<li>Improved fuel efficiency</li>
+<li>Good compromise between performance and cost</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>More complex manufacturing than straight wings</li>
+<li>Tip stall tendency requires design attention</li>
+<li>Still limited at high subsonic speeds</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Modern general aviation, regional airliners, military trainers, business jets (Beechcraft Bonanza, King Air)</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>Tapering reduces weight and drag while maintaining good low-speed handling, making it ideal for aircraft seeking better efficiency without the complexity of swept wings.</p>
+</div>
+<div class="reasoning-section">
+<h3>🎓 Educational Reasoning</h3>
+<p>Optimal balance between efficiency and manufacturing simplicity for mid-range general aviation.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Elliptical Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="stall-location">
+<h4>📍 Stall Location & Behavior:</h4>
+<p><strong>Near-Ideal Distribution</strong> - Close to optimal elliptical lift distribution causes more uniform stall, but still generally root-inward progression</p>
+</div>
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Minimum induced drag (optimal lift distribution)</li>
+<li>Most aerodynamically efficient planform</li>
+<li>Excellent maneuverability</li>
+<li>Reduced wingtip vortices</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>Very expensive and complex to manufacture</li>
+<li>Difficult to produce consistently</li>
+<li>High production time</li>
+<li>Challenging structural design</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>High-performance WWII fighters (Spitfire), specialized racing aircraft</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>The elliptical wing provides the theoretically perfect lift distribution, but its manufacturing complexity means it's only used when maximum performance justifies the cost.</p>
+</div>
+<div class="reasoning-section">
+<h3>🎓 Educational Reasoning</h3>
+<p>Historical significance in achieving maximum aerodynamic efficiency when manufacturing constraints were acceptable.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="category-header category-transonic">High Subsonic/Transonic</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Swept Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="stall-location">
+<h4>📍 Stall Location & Behavior:</h4>
+<p><strong>Tip First (PROBLEMATIC)</strong> - Swept wings naturally stall at tips first, requiring wing fences, vortex generators, or leading-edge devices</p>
+</div>
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Delayed shock wave formation</li>
+<li>Higher critical Mach number</li>
+<li>Reduced wave drag at transonic speeds</li>
+<li>Enables higher cruise speeds</li>
+<li>Good high-speed stability</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>Poor low-speed handling</li>
+<li>Higher stall speeds</li>
+<li>Tip stall tendency</li>
+<li>Reduced lift coefficient</li>
+<li>Complex high-lift devices needed</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Commercial jetliners, military fighters, business jets (Boeing 737, Airbus A320, F-15)</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>Swept wings allow aircraft to fly efficiently at high subsonic speeds by delaying compressibility effects, essential for modern commercial aviation.</p>
+</div>
+<div class="reasoning-section">
+<h3>🎓 Educational Reasoning</h3>
+<p>The standard for modern commercial aviation where high-speed cruise efficiency is essential despite low-speed challenges.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Crescent Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Optimized sweep distribution</li>
+<li>Reduced induced drag</li>
+<li>Good transonic performance</li>
+<li>Innovative aerodynamic solution</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>Very complex to design</li>
+<li>Difficult to manufacture</li>
+<li>Limited historical data</li>
+<li>Rarely used due to complexity</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Experimental aircraft, Victor bomber</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>The varying sweep angle attempts to optimize each wing section's local Mach number, but manufacturing challenges have limited adoption.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="category-header category-supersonic">Supersonic</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Delta Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>High structural strength</li>
+<li>Large internal fuel volume</li>
+<li>Good supersonic performance</li>
+<li>Simple construction (no separate tail)</li>
+<li>High angle of attack capability</li>
+<li>Excellent roll rates</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>High landing speeds</li>
+<li>Poor low-speed lift</li>
+<li>High induced drag at low speeds</li>
+<li>Large runway requirements</li>
+<li>Reduced subsonic efficiency</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Supersonic fighters, interceptors, Concorde (Mirage 2000, F-106, Eurofighter)</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>The delta's strength and volume make it ideal for supersonic flight where structural loads are high and fuel capacity is critical.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Ogival Delta Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Better lift at low speeds than standard delta</li>
+<li>Improved subsonic performance</li>
+<li>Strong vortex lift generation</li>
+<li>Excellent supersonic performance</li>
+<li>Reduced wave drag</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>Still requires long runways</li>
+<li>Complex aerodynamics</li>
+<li>High approach speeds</li>
+<li>Expensive to design and optimize</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Concorde, supersonic reconnaissance aircraft</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>The curved leading edge generates powerful vortices that improve low-speed lift while maintaining supersonic efficiency, crucial for commercial supersonic flight.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Compound Delta Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Balances supersonic and subsonic performance</li>
+<li>Better low-speed handling than pure delta</li>
+<li>Improved lift-to-drag ratio</li>
+<li>Flexible design optimization</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>Complex design and analysis</li>
+<li>Higher manufacturing costs</li>
+<li>Requires careful optimization</li>
+<li>Potential for flow separation issues</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Advanced fighters, experimental supersonic aircraft (Saab Draken)</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>Multiple sweep angles allow designers to optimize different wing sections for specific speed regimes, creating a versatile platform.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Delta with Canard</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Enhanced maneuverability</li>
+<li>Improved pitch control</li>
+<li>Better low-speed lift</li>
+<li>Canard provides trim and control</li>
+<li>Reduced approach speeds</li>
+<li>Vortex interaction benefits</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>Complex aerodynamic interactions</li>
+<li>More surfaces to maintain</li>
+<li>Potential instability if poorly designed</li>
+<li>Increased complexity</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Modern fighters, experimental aircraft (Eurofighter Typhoon, Rafale, Gripen)</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>The canard enhances the delta wing's weakest area (low-speed performance) while adding control authority for extreme maneuverability.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Tailed Delta Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Better pitch control than pure delta</li>
+<li>Improved stability</li>
+<li>More conventional handling</li>
+<li>Easier pilot transition</li>
+<li>Better low-speed characteristics</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>Added weight of tail surfaces</li>
+<li>Increased complexity</li>
+<li>More drag than pure delta</li>
+<li>Higher parts count</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Fighter-bombers, attack aircraft (F-102, F-106)</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>Adding a conventional tail improves handling and control while maintaining most delta advantages, useful for multi-role combat aircraft.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="category-header category-multi">Multi-Regime</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Variable Sweep Wings</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Optimized for multiple flight regimes</li>
+<li>Extended wings for takeoff/landing efficiency</li>
+<li>Swept wings for high-speed flight</li>
+<li>Versatile mission profiles</li>
+<li>Reduced runway requirements</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>Heavy and complex mechanism</li>
+<li>High maintenance requirements</li>
+<li>Expensive to build and operate</li>
+<li>Potential mechanical failures</li>
+<li>Wing box structural challenges</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Multi-role military aircraft (F-14 Tomcat, F-111, B-1B Lancer, Tornado)</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>Variable sweep allows one aircraft to excel at both carrier operations and high-speed interception, though mechanical complexity limits modern use.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="category-header category-specialized">Specialized</div>
+
+<div class="wing-card">
+<div class="wing-header" onclick="toggleContent(this)">
+<h2>Inverted Wings (Anhedral)</h2>
+<span class="arrow">▼</span>
+</div>
+<div class="wing-content">
+<div class="content-inner">
+<div class="two-column">
+<div class="pros-section">
+<h3>✓ Advantages</h3>
+<ul>
+<li>Increased lateral stability in some configurations</li>
+<li>Better ground clearance with high wings</li>
+<li>Improved downward visibility</li>
+<li>Reduced dihedral effect</li>
+</ul>
+</div>
+<div class="cons-section">
+<h3>✗ Disadvantages</h3>
+<ul>
+<li>Reduced lateral stability (typically)</li>
+<li>Unusual handling characteristics</li>
+<li>Limited applications</li>
+<li>May require compensatory designs</li>
+</ul>
+</div>
+</div>
+<div class="applications-section">
+<h3>✈ Applications</h3>
+<p>Specialized military aircraft, some cargo aircraft, Harrier jump jet</p>
+</div>
+<div class="why-section">
+<h3>💡 Why This Design?</h3>
+<p>Anhedral is used when excessive natural stability would make an aircraft too sluggish, or when ground clearance with weapons/engines is needed.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="key-considerations">
+<h3>🔑 Key Considerations for Wing Selection:</h3>
+<ul>
+<li>• <strong>Speed Range:</strong> Straight/tapered for low speeds, swept for high subsonic, delta for supersonic</li>
+<li>• <strong>Mission Profile:</strong> Variable sweep for versatility, specialized designs for specific roles</li>
+<li>• <strong>Manufacturing Cost:</strong> Simpler designs (straight, tapered) are more economical</li>
+<li>• <strong>Runway Requirements:</strong> Straight wings need less runway than deltas</li>
+<li>• <strong>Structural Efficiency:</strong> Balance between aerodynamic performance and structural weight</li>
+</ul>
+</div>
+</div>
+
+<script>
+function toggleContent(header) {
+const content = header.nextElementSibling;
+const arrow = header.querySelector('.arrow');
+content.classList.toggle('active');
+if (content.classList.contains('active')) {
+arrow.style.transform = 'rotate(180deg)';
+} else {
+arrow.style.transform = 'rotate(0deg)';
+}
+}
+
+function toggleAll() {
+const allContents = document.querySelectorAll('.wing-content');
+const allArrows = document.querySelectorAll('.arrow');
+const anyExpanded = Array.from(allContents).some(content => content.classList.contains('active'));
+allContents.forEach((content, index) => {
+if (anyExpanded) {
+content.classList.remove('active');
+allArrows[index].style.transform = 'rotate(0deg)';
+} else {
+content.classList.add('active');
+allArrows[index].style.transform = 'rotate(180deg)';
+}
+});
+}
+</script>
+</body>
+</html>
