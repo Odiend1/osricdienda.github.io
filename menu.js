@@ -75,7 +75,7 @@ menuWrapper.appendChild(menuDialog);
 var openMenu = document.createElement("button");
 openMenu.id = "open-menu";
 var openMenuIcon = document.createElement("img");
-openMenuIcon.src = "/assets/menu_icon.png";
+openMenuIcon.src = "/assets/menu_icon.webp";
 openMenuIcon.alt = "Menu"
 openMenuIcon.width = 30;
 openMenuIcon.height = 30;

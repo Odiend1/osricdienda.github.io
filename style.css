@@ -202,11 +202,12 @@ button:hover{
 }
 
 #menu-button{
-  border-radius: 30px;
   text-align: center;
   margin: 10px;
   display: none;
   float: right;
+  background: none;
+  border: none;
 }
 
 #open-menu{
@@ -230,6 +231,11 @@ button:hover{
   left: 0;
   overflow-x: hidden;
   border-right: 1px solid #00ffff;
+}
+
+#close-menu{
+  background: none;
+  border: none;
 }
 
 #navbar {
